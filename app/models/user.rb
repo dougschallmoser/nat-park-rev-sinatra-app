@@ -3,6 +3,11 @@ class User < ActiveRecord::Base
     has_many :posts 
     has_many :parks, through: :posts
 
+    has_secure_password
+    validates :name, :presence => true 
+    validates :email, :presence => true 
+    validates :username, :presence => true
+
     def slug
         self.username.downcase.strip.gsub(' ', '-')
     end

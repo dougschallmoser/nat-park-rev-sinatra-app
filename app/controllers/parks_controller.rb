@@ -1,3 +1,5 @@
+require 'rack-flash'
+
 class ParksController < ApplicationController
 
     use Rack::Flash
