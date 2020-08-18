@@ -1,4 +1,6 @@
-
+<br>
+<h3><%= @park.name %></h3>
+<br>
 <table>
     <tr>
         <th>Title</th>
@@ -7,9 +9,9 @@
         <th>Rating</th>
     </tr>
     <tr class="rev_head_info">
-        <% @posts.each do |post| %>
+        <% @park.posts.each do |post| %>
             <td><a href="posts/<%= post.id %>"><%= post.title %></td>
-            <td><a href="parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
+            <td><%= post.park.name %></a></td>
             <td><%= post.created_at %></td>
             <td><%= post.rating %></td>
     </tr>
