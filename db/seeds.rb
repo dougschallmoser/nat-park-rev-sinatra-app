@@ -41,7 +41,7 @@ so_many_animals.save
 
 very_good.user = skittles 
 very_good.park = north_cascades 
-very_good.park.save 
+very_good.save 
 
 bad_park.user = erin
 bad_park.park = biscayne 
