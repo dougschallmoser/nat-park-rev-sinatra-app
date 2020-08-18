@@ -5,12 +5,12 @@ doug = User.create(:name => "Doug", :username => "dougr81", :email => "dougr81@h
 skittles = User.create(:name => "Skittles", :username => "skittles123", :email => "skittles123@gmail.com", :password => "iluveskittles")
 erin = User.create(:name => "Erin", :username => "branzell", :email => "erin@aol.com", :password => "brass")
 
-## Parks ##
-north_cascades = Park.create(:name => "North Cascades")
-olympic = Park.create(:name => "Olympic")
-mount_rainier = Park.create(:name => "Mount Rainier")
-yellowstone = Park.create(:name => "Yellowstone")
-biscayne = Park.create(:name => "Biscayne")
+# ## Parks ##
+# north_cascades = Park.create(:name => "North Cascades")
+# olympic = Park.create(:name => "Olympic")
+# mount_rainier = Park.create(:name => "Mount Rainier")
+# yellowstone = Park.create(:name => "Yellowstone")
+# biscayne = Park.create(:name => "Biscayne")
 
 ## Posts ##
 so_many_animals = Post.create(:title => "So Many Animals", :content => "Proin volutpat sem nec volutpat aliquet. Aenean quis turpis varius, faucibus mauris in, fermentum velit. Mauris egestas orci eu lectus finibus vehicula. Duis posuere ligula sit amet eleifend lacinia. Vivamus ac lectus ut elit porttitor ornare sit amet nec purus. Nullam luctus nibh vitae mi placerat ullamcorper. Proin molestie augue non eros imperdiet, eget malesuada lacus auctor. Sed consequat, justo sit amet lacinia maximus, tortor nisl consectetur mauris, id rhoncus lacus sapien eu ante. Ut eleifend, mi ut rhoncus interdum, purus justo elementum lorem, ac rhoncus ex mi vel justo. Duis cursus odio eu nunc aliquam, at pellentesque dui ornare.", :rating => "4", :created_at => Time.new.strftime("%A, %B %d, %Y at%l:%M%p"))
@@ -19,18 +19,28 @@ bad_park = Post.create(:title => "Worst Exerience Ever", :content => "Phasellus 
 so_so = Post.create(:title => "So So", :content => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis libero eget convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere arcu scelerisque tellus varius porttitor et eget enim. Ut fermentum neque arcu, nec auctor tellus faucibus quis. Nullam non ex et tellus placerat feugiat nec id felis. In auctor enim sed est fringilla bibendum. Nunc ut lobortis tellus. Sed tempus metus sapien, ut dignissim elit condimentum eu.", :rating => "3", :created_at => Time.new.strftime("%A, %B %d, %Y at%l:%M%p"))
 
 ## States ##
-states = [
-    "Alabama", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
-]
+# states = [
+#     "Alabama", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
+# ]
 
 states.each {|state| State.create(:name => state)}
 
 ## Parks ##
 
-parks = [
-    "Acadia", "American Samoa", "Arches", "Badlands", "Big Bend", "Biscayne", "Black Canyon of the Gunnison", "Bryce Canyon", "Canyonlands", "Capitol Reef", "Carlsbad Caverns", "Channel Islands", "Congaree", "Crater Lake", "Cuyahoga Valley", "Death Valley", "Denali", "Dry Tortugas", "Everglades", "Gates of the Arctic", "Gateway Arch", "Glacier", "Glacier Bay", "Grand Canyon", "Grand Teton", "Great Basin", "Great Sand Dunes", 
-    "Great Smoky Mountains", "Guadalupe Mountains", "Haleakala", "Hawai'i Volcanoes", "Hot Springs", "Indiana Dunes", "Isle Royale", "Joshua Tree", "Katmai", "Kenai Fjords", "Kings Canyon", "Kobuk Valley", "Lake Clark", "Lessen Volcanic", "Mammoth Cave", "Mesa Verde", "Mount Rainier", "North Cascades", "Olympic", "Petrified Forest", "Pinnacles", "Redwood", "Rocky Mountain", "Saguaro", "Sequoia", "Shenandoah", "Theodore Roosevelt", "Virgin Islands", "Voyageurs", "White Sands", "Wind Cave", "Wrangell-St. Elias", "Yellowstone", "Yosemite", "Zion"
-]
+# parks = [
+#     "Acadia", "American Samoa", "Arches", "Badlands", "Big Bend", "Biscayne", "Black Canyon of the Gunnison", "Bryce Canyon", "Canyonlands", "Capitol Reef", "Carlsbad Caverns", "Channel Islands", "Congaree", "Crater Lake", "Cuyahoga Valley", "Death Valley", "Denali", "Dry Tortugas", "Everglades", "Gates of the Arctic", "Gateway Arch", "Glacier", "Glacier Bay", "Grand Canyon", "Grand Teton", "Great Basin", "Great Sand Dunes", 
+#     "Great Smoky Mountains", "Guadalupe Mountains", "Haleakala", "Hawai'i Volcanoes", "Hot Springs", "Indiana Dunes", "Isle Royale", "Joshua Tree", "Katmai", "Kenai Fjords", "Kings Canyon", "Kobuk Valley", "Lake Clark", "Lessen Volcanic", "Mammoth Cave", "Mesa Verde", "Mount Rainier", "North Cascades", "Olympic", "Petrified Forest", "Pinnacles", "Redwood", "Rocky Mountain", "Saguaro", "Sequoia", "Shenandoah", "Theodore Roosevelt", "Virgin Islands", "Voyageurs", "White Sands", "Wind Cave", "Wrangell-St. Elias", "Yellowstone", "Yosemite", "Zion"
+# ]
+
+# parks.each {|park| Park.create(:name => park)}
+
+parks = {
+    "park" => {
+        name: "Acadia", state: ""
+    }
+}
+
+parks_states
 
 ## Associations ##
 north_cascades.state = State.find_by(:name => "Washington")
