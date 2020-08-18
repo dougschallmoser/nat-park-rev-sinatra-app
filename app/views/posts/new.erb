@@ -1,13 +1,23 @@
-
+<br>
 <form method="POST" action="/posts">
     <label for="title">Title:</label>
     <br>
-    <input type="text" id="title" name="post[title]" size="81">
+        <input type="text" id="title" name="post[title]" size="81">
+    <br>
+    <br>
+    <label for="parks">National Park:</label>
+    <br>
+        <select id="parks" name="post[park_id]">
+            <option value="" selected disabled hidden>select park</option>
+            <% @parks.each do |park| %>
+            <option value="<%= park.id %>"><%= park.name %></option>
+            <% end %>
+        </select>
     <br>
     <br>
     <label for="content">Content:</label>
     <br>
-    <textarea id="content" name="post[content]" rows="12" cols="80">Enter your review in here.</textarea>
+        <textarea id="content" name="post[content]" rows="12" cols="80">Enter your review here.</textarea>
     <br>
     <br>
     <input type="submit" value="Create Review">

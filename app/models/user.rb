@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
     validates :name, :presence => true 
     validates :email, :presence => true 
     validates :username, :presence => true
+    validates :username, :uniqueness => true
 
     def slug
         self.username.downcase.strip.gsub(' ', '-')
