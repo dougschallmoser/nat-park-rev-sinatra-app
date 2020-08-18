@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_08_17_235745) do
 
   create_table "parks", force: :cascade do |t|
     t.string "name"
-    t.integer "state_id"
+    t.string "state"
   end
 
   create_table "posts", force: :cascade do |t|

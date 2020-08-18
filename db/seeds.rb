@@ -2,70 +2,104 @@
 
 ## Users ##
 doug = User.create(:name => "Doug", :username => "dougr81", :email => "dougr81@hotmail.com", :password => "monkey")
+
 skittles = User.create(:name => "Skittles", :username => "skittles123", :email => "skittles123@gmail.com", :password => "iluveskittles")
+
 erin = User.create(:name => "Erin", :username => "branzell", :email => "erin@aol.com", :password => "brass")
 
-# ## Parks ##
-# north_cascades = Park.create(:name => "North Cascades")
-# olympic = Park.create(:name => "Olympic")
-# mount_rainier = Park.create(:name => "Mount Rainier")
-# yellowstone = Park.create(:name => "Yellowstone")
-# biscayne = Park.create(:name => "Biscayne")
-
 ## Posts ##
-so_many_animals = Post.create(:title => "So Many Animals", :content => "Proin volutpat sem nec volutpat aliquet. Aenean quis turpis varius, faucibus mauris in, fermentum velit. Mauris egestas orci eu lectus finibus vehicula. Duis posuere ligula sit amet eleifend lacinia. Vivamus ac lectus ut elit porttitor ornare sit amet nec purus. Nullam luctus nibh vitae mi placerat ullamcorper. Proin molestie augue non eros imperdiet, eget malesuada lacus auctor. Sed consequat, justo sit amet lacinia maximus, tortor nisl consectetur mauris, id rhoncus lacus sapien eu ante. Ut eleifend, mi ut rhoncus interdum, purus justo elementum lorem, ac rhoncus ex mi vel justo. Duis cursus odio eu nunc aliquam, at pellentesque dui ornare.", :rating => "4", :created_at => Time.new.strftime("%A, %B %d, %Y at%l:%M%p"))
-very_good = Post.create(:title => "Very Good", :content => "Donec vulputate efficitur vehicula. Etiam nec lectus sit amet ligula elementum finibus sed ac ante. In efficitur lorem eu scelerisque luctus. Nullam feugiat odio eget enim maximus vulputate. Donec nec diam ex. Fusce suscipit feugiat ultrices. Morbi a facilisis dui, quis viverra metus. Donec dictum, metus facilisis dapibus semper, orci enim hendrerit justo, sed mollis risus metus eget mi. Donec consectetur lorem in metus dapibus, in malesuada magna ultrices. Proin sit amet placerat nisl, quis volutpat quam. Nunc at justo sed arcu bibendum maximus. Ut non iaculis nibh.", :rating => "5", :created_at => Time.new.strftime("%A, %B %d, %Y at%l:%M%p"))
-bad_park = Post.create(:title => "Worst Exerience Ever", :content => "Phasellus non eros eget neque convallis volutpat. Maecenas blandit, sapien nec molestie pharetra, nunc augue tristique nibh, eget finibus lectus mauris in ante. Nunc eget neque et mauris consectetur suscipit. Pellentesque bibendum ut dui ut fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla et sodales ipsum, vitae aliquam quam. Duis condimentum arcu sit amet suscipit scelerisque. Curabitur vulputate nibh a placerat luctus. Vivamus accumsan fringilla laoreet. Proin ut risus sem. Quisque accumsan nisl quis auctor pretium. Donec consequat pharetra ligula, at scelerisque erat.", :rating => "1", :created_at => Time.new.strftime("%A, %B %d, %Y at%l:%M%p"))
-so_so = Post.create(:title => "So So", :content => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis libero eget convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere arcu scelerisque tellus varius porttitor et eget enim. Ut fermentum neque arcu, nec auctor tellus faucibus quis. Nullam non ex et tellus placerat feugiat nec id felis. In auctor enim sed est fringilla bibendum. Nunc ut lobortis tellus. Sed tempus metus sapien, ut dignissim elit condimentum eu.", :rating => "3", :created_at => Time.new.strftime("%A, %B %d, %Y at%l:%M%p"))
+so_many_animals = Post.create(:title => "So Many Animals", :content => "I would definitely suggest doing lots of research before coming to make sure you know where you want to go and what you want to see while in Yellowstone. The park is huge! And there is a lot to see and do. We drove through in one day and saw some highlights but probably could have done more. It can be tricky driving through there, so make sure you are prepared for the winding roads and hills. We did see Old Faithful, it was cool but there were really too many people around to feel safe during covid. The views are unmatched though, highly recommend the park overall!", :rating => "4", :created_at => Time.new.strftime("%A, %B %d, %Y at%l:%M%p"))
 
-## States ##
-# states = [
-#     "Alabama", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
-# ]
+very_good = Post.create(:title => "Very Good", :content => "We have traveled extensively in the US.
+We have visited most of the National Parks. Somehow the North Cascades National Park doesn't have the PR that other parks do and is therefore not that famous. I agree with the reviewer who wrote that the park is underrated. It definitely is!!
+We entered from the west (which is the right way to do it.....) and started at the Newhalem Visitor Center (reviewed by me separately). From there we drove eastward through the park and stopped at the various viewpoints and did some short hikes.
+The scenery is absolutely breathtaking!! The mountains, forests, waterfalls and lakes are stunning. We didn't know where to look first. I am attaching a few photos, but believe me, photos don't do justice to this park......You need to be there. Magnificent Majestic Scenery!!! A Definite MUST!!!", :rating => "5", :created_at => Time.new.strftime("%A, %B %d, %Y at%l:%M%p"))
 
-states.each {|state| State.create(:name => state)}
+bad_park = Post.create(:title => "Worst Exerience Ever", :content => "I wish those taking my money would have told me that we would not see anything. It had rained for a few days before and once we were at the reef, the captain told us that often you can't see the reef because of the run off even that far offshore. The waves were 2 to 4 feet and you could not see more then 8in in front of your face. There is no way you could snorkel and see any of the reef. They dropped 13 of us in the water and said 'Swim for it' but no one could see. Total waste of money. The information that DW shared was the only good part of the trip. Moved us to shallow water and told us that we could look in the mangroves. We could have done that for free near the parking lot. Would not ever go back.", :rating => "1", :created_at => Time.new.strftime("%A, %B %d, %Y at%l:%M%p"))
+
+so_so = Post.create(:title => "So So", :content => "Yes it’s a quick journey through unless you decide to go camping or hiking but it’s still worth a day or two. I managed to do all the way through to Chelan from Seattle in a day and if just stopping at overlooks then you can do that.", :rating => "3", :created_at => Time.new.strftime("%A, %B %d, %Y at%l:%M%p"))
 
 ## Parks ##
+parks = [
+    {name: "Acadia", state: "Maine"},
+    {name: "American Samoa", state: "American Samoa"},
+    {name: "Arches", state: "Utah"},
+    {name: "Badlands", state: "South Dakota"},
+    {name: "Big Bend", state: "Texas"},
+    {name: "Biscayne", state: "Florida"},
+    {name: "Black Canyon of the Gunnison", state: "Colorado"},
+    {name: "Bryce Canyon", state: "Utah"},
+    {name: "Canyonlands", state: "Utah"},
+    {name: "Capitol Reef", state: "Utah"},
+    {name: "Carlsbad Caverns", state: "New Mexico"},
+    {name: "Channel Islands", state: "California"},
+    {name: "Congaree", state: "South Carolina"},
+    {name: "Crater Lake", state: "Oregon"},
+    {name: "Cuyahoga Valley", state: "Ohio"},
+    {name: "Death Valley", state: "California"},
+    {name: "Denali", state: "Alaska"},
+    {name: "Dry Tortugas", state: "Florida"},
+    {name: "Everglades", state: "Florida"},
+    {name: "Gates of the Arctic", state: "Alaska"},
+    {name: "Gateway Arch", state: "Missouri"},
+    {name: "Glacier", state: "Montana"},
+    {name: "Glacier Bay", state: "Alaska"},
+    {name: "Grand Canyon", state: "Arizona"},
+    {name: "Grand Teton", state: "Wyoming"},
+    {name: "Great Basin", state: "Nevada"},
+    {name: "Great Sand Dunes", state: "Colorado"},
+    {name: "Great Smoky Mountains", state: "North Carolina"},
+    {name: "Guadalupe Mountains", state: "Texas"},
+    {name: "Haleakala", state: "Hawaii"},
+    {name: "Hawai'i Volcanoes", state: "Hawaii"},
+    {name: "Hot Springs", state: "Arkansas"},
+    {name: "Indiana Dunes", state: "Indiana"},
+    {name: "Isle Royale", state: "Michigan"},
+    {name: "Joshau Tree", state: "California"},
+    {name: "Katmai", state: "Alaska"},
+    {name: "Kenai Fjords", state: "Alaska"},
+    {name: "Kings Canyon", state: "California"},
+    {name: "Kobuk Valley", state: "Alaska"},
+    {name: "Lake Clark", state: "Alaska"},
+    {name: "Lassen Volcanic", state: "California"},
+    {name: "Mammoth Cave", state: "Kentucky"},
+    {name: "Mesa Verde", state: "Colorado"},
+    {name: "Mount Rainier", state: "Washington"},
+    {name: "North Cascades", state: "Washington"},
+    {name: "Olympic", state: "Washington"},
+    {name: "Petrified Forest", state: "Arizona"},
+    {name: "Pinnacles", state: "California"},
+    {name: "Redwood", state: "California"},
+    {name: "Rocky Mountain", state: "Colorado"},
+    {name: "Saguaro", state: "Arizona"},
+    {name: "Sequoia", state: "California"},
+    {name: "Shenandoah", state: "Virginia"},
+    {name: "Theodore Roosevelt", state: "North Dakota"},
+    {name: "Virgin Islands", state: "U.S. Virgin Islands"},
+    {name: "Voyageurs", state: "Minnesota"},
+    {name: "White Sands", state: "New Mexico"},
+    {name: "Wind Cave", state: "South Dakota"},
+    {name: "Wrangell-St. Elias", state: "Alaska"},
+    {name: "Yellowstone", state: "Wyoming"},
+    {name: "Yosmite", state: "California"},
+    {name: "Zion", state: "Utah"}
+]
 
-# parks = [
-#     "Acadia", "American Samoa", "Arches", "Badlands", "Big Bend", "Biscayne", "Black Canyon of the Gunnison", "Bryce Canyon", "Canyonlands", "Capitol Reef", "Carlsbad Caverns", "Channel Islands", "Congaree", "Crater Lake", "Cuyahoga Valley", "Death Valley", "Denali", "Dry Tortugas", "Everglades", "Gates of the Arctic", "Gateway Arch", "Glacier", "Glacier Bay", "Grand Canyon", "Grand Teton", "Great Basin", "Great Sand Dunes", 
-#     "Great Smoky Mountains", "Guadalupe Mountains", "Haleakala", "Hawai'i Volcanoes", "Hot Springs", "Indiana Dunes", "Isle Royale", "Joshua Tree", "Katmai", "Kenai Fjords", "Kings Canyon", "Kobuk Valley", "Lake Clark", "Lessen Volcanic", "Mammoth Cave", "Mesa Verde", "Mount Rainier", "North Cascades", "Olympic", "Petrified Forest", "Pinnacles", "Redwood", "Rocky Mountain", "Saguaro", "Sequoia", "Shenandoah", "Theodore Roosevelt", "Virgin Islands", "Voyageurs", "White Sands", "Wind Cave", "Wrangell-St. Elias", "Yellowstone", "Yosemite", "Zion"
-# ]
-
-# parks.each {|park| Park.create(:name => park)}
-
-parks = {
-    "park" => {
-        name: "Acadia", state: ""
-    }
-}
-
-parks_states
+Park.create(parks)
 
 ## Associations ##
-north_cascades.state = State.find_by(:name => "Washington")
-north_cascades.save
-olympic.state = State.find_by(:name => "Washington")
-olympic.save
-mount_rainier.state = State.find_by(:name => "Washington")
-mount_rainier.save
-yellowstone.state = State.find_by(:name => "Wyoming")
-yellowstone.save
-biscayne.state = State.find_by(:name => "Florida")
-biscayne.save 
-
 so_many_animals.user = doug 
-so_many_animals.park = yellowstone
+so_many_animals.park = Park.find_by(:name => "Yellowstone")
 so_many_animals.save
 
 very_good.user = skittles 
-very_good.park = north_cascades 
+very_good.park = Park.find_by(:name => "North Cascades")
 very_good.save 
 
 bad_park.user = erin
-bad_park.park = biscayne 
+bad_park.park = Park.find_by(:name => "Biscayne")
 bad_park.save 
 
 so_so.user = doug 
-so_so.park = north_cascades 
+so_so.park = Park.find_by(:name => "North Cascades") 
 so_so.save 
