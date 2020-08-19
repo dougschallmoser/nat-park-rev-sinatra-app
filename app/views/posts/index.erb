@@ -14,7 +14,7 @@
             <td><%= post.rating %></td>
     </tr>
     <tr class="rev_content">
-            <td = colspan="4"><%= post.content %></td>
+            <td = colspan="4"><%= logged_in? ? post.content : post.content.truncate(35) %></td>
     </tr>
     <tr class="blank_row"> 
         <td>BLANK</td>
