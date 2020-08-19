@@ -26,8 +26,11 @@ class PostsController < ApplicationController
     end
 
     get '/posts/:id' do 
-        @post = Post.find_by(:id => params[:id])
-        erb :"posts/show"
+        if @post = Post.find_by(:id => params[:id])
+            erb :"posts/show"
+        else
+            erb :"/posts/error"
+        end
     end
 
     get '/posts/:id/edit' do
