@@ -17,7 +17,7 @@
     <br>
     <label for="content">Content:</label>
     <br>
-        <textarea id="content" name="post[content]" rows="12" cols="80">Enter your review here.</textarea>
+        <textarea id="content" name="post[content]" placeholder="Enter your review here." rows="12" cols="80"></textarea>
     <br>
     <br>
     <label for="rating">Rating:</label>
@@ -31,6 +31,7 @@
             <option value="1">1 (lowest)</option>
         </select>
     <br>
+    <input type="hidden" id="time" name="post[created_at]" value="<%=Time.new.strftime("%A, %B %d, %Y at%l:%M%p")%>">
     <br>
     <input type="submit" value="Create Review">
 <form>
