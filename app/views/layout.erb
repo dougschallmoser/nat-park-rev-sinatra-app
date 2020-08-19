@@ -1,16 +1,23 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>NatParkRev</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
-  <body>
-    
-    <div class="container">
-      <h1><a href="/">NatParkRev</a></h1>
+<body>
+
+  <div class="flex-container">
+    <header>
+      <nav>
+        <%= not_logged_in_buttons if !logged_in? %>
+        <%= logged_in_buttons if logged_in? %>
+      </nav>
+    </header>
+    <main>
       <%= yield %>
-    </div>
-    
-  </body>
+    </main>
+    <footer></footer>
+  </div>
+
+</body>
 </html>
