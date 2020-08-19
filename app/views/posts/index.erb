@@ -1,4 +1,4 @@
-
+<br>
 <table>
     <tr>
         <th>Title</th>
@@ -7,7 +7,7 @@
         <th>Rating</th>
     </tr>
     <tr class="rev_head_info">
-        <% @posts.each do |post| %>
+        <% @posts.order(:created_at => :desc).each do |post| %>
             <td><a href="posts/<%= post.id %>"><%= post.title %></td>
             <td><a href="parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
             <td><%= post.created_at %></td>

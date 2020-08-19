@@ -10,7 +10,7 @@ You are logged in as: <%= @user.name %>
         <th>Rating</th>
     </tr>
     <tr class="rev_head_info">
-        <% @user.posts.each do |post| %>
+        <% @user.posts.order(:created_at => :desc).each do |post| %>
             <td><a href="posts/<%= post.id %>"><%= post.title %></td>
             <td><a href="parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
             <td><%= post.created_at %></td>
