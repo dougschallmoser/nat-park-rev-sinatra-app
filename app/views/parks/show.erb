@@ -1,7 +1,7 @@
-<br>
-<h3><%= @park.name %> National Park</h3>
-<br>
+
+
 <table>
+<h3><%= @park.name %> National Park</h3>
     <tr>
         <th>Title</th>
         <th>Park Name</th>
@@ -11,15 +11,15 @@
     <tr class="rev_head_info">
         <% @park.posts.order(:created_at => :desc).each do |post| %>
             <td><a href="../posts/<%= post.id %>"><%= post.title %></a></td>
-            <td><%= post.park.name %></a></td>
+            <td><%= post.park.name %></td>
             <td><%= post.created_at %></td>
             <td><%= post.rating %></td>
     </tr>
     <tr class="rev_content">
             <td = colspan="4"><%= post.content %></td>
+            <% end %>
     </tr>
     <tr class="blank_row"> 
         <td>BLANK</td>
     </tr>
-        <% end %>
-<table>
+</table>

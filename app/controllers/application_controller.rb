@@ -35,6 +35,7 @@ class ApplicationController < Sinatra::Base
 
         def logged_in_buttons
             logged_in_buttons = <<-DOC
+                <a href='/'>NatParkRev</a> |
                 <a href='/posts'>Reviews</a> |
                 <a href='/users/#{current_user.slug}'>My Page</a> |
                 <a href='/logout'>Sign Out</a> |
@@ -44,6 +45,7 @@ class ApplicationController < Sinatra::Base
 
         def not_logged_in_buttons
             not_logged_in_buttons = <<-DOC
+                <a href='/'>NatParkRev</a> |
                 <a href='/posts'>Reviews</a> |
                 <a href='/signup'>Sign Up</a> |
                 <a href='/login'>Sign In</a>
