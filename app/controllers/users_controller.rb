@@ -4,14 +4,13 @@ class UsersController < ApplicationController
         if !logged_in?
             erb :"users/new"
         else 
-            redirect "/users/:slug"
+            redirect "/users/#{current_user.slug}"
         end
     end
 
     post '/signup' do 
         @user = User.new(params[:user])
         if @user.save
-            session[:username] = @user.username 
             redirect "/login"
         else 
             redirect "/signup"
@@ -19,8 +18,12 @@ class UsersController < ApplicationController
     end
     
     get '/users/:slug' do 
-        @user = User.find_by_slug(params[:slug])
-        erb "/users/show"
+        if logged_in?
+            @user = User.find_by_slug(params[:slug])
+            erb "/users/show"
+        else 
+            redirect "/login"
+        end
     end
     
     get '/login' do 
@@ -32,7 +35,8 @@ class UsersController < ApplicationController
     end
 
     post '/login' do 
-        user = User.find_by(:username => params[:username])
-        
+        login(params[:username], params[:password])
+        redirect "/users/#{current_user.slug}"
+    end
 
 end
