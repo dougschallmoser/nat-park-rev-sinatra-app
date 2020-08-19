@@ -1,7 +1,6 @@
 
 <br>
 <table>
-    
     <tr><%= @post.title %></tr>
     <br>
     <tr><a href="/parks/<%= @post.park.slug %>"><%= @post.park.name %> National Park</a></tr>
@@ -11,6 +10,6 @@
     <tr>Rating: <%= @post.rating %></tr>
     <br>
     <tr class="rev_content">
-        <td = colspan="4"><%= @post.content %></td>
+        <td><%= @post.content %></td>
     </tr>
 <table>

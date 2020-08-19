@@ -26,10 +26,14 @@ class PostsController < ApplicationController
     end
 
     get '/posts/:id' do 
-        if @post = Post.find_by(:id => params[:id])
-            erb :"posts/show"
+        if logged_in?
+            if @post = Post.find_by(:id => params[:id])
+                erb :"posts/show"
+            else
+                erb :"/posts/error"
+            end 
         else
-            erb :"/posts/error"
+            redirect "/login"
         end
     end
 
