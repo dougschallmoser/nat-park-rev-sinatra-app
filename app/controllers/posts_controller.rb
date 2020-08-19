@@ -10,8 +10,12 @@ class PostsController < ApplicationController
     end 
     
     get '/posts/new' do 
-        @parks = Park.all
-        erb :"posts/new"
+        if logged_in?
+            @parks = Park.all
+            erb :"posts/new"
+        else 
+            redirect "/login"
+        end
     end
     
     get '/posts/:id' do 
@@ -20,8 +24,10 @@ class PostsController < ApplicationController
     end
 
     post '/posts' do
-        @post = Post.create(params[:post])
-
+        post = Post.new(params[:post])
+        post.user = current_user
+        post.save
+        redirect "/users/#{current_user.slug}"
     end
 
 

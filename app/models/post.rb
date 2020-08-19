@@ -3,6 +3,10 @@ class Post < ActiveRecord::Base
     belongs_to :user 
     belongs_to :park
 
+    validates :title, :presence => true 
+    validates :content, :presence => true 
+    validates :rating, :presence => true 
+
     def slug
         self.name.downcase.strip.gsub(' ', '-')
     end
