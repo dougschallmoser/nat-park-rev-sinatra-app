@@ -1,0 +1,35 @@
+<br>
+<form method="POST" action="/posts/<%= @post.id %>">
+    <input type="hidden" id="hidden name="_method" value="patch">
+    <label for="title">Title:</label>
+    <br>
+        <input type="text" id="title" name="post[title]" size="81" value="<%= @post.title %>">
+    <br>
+    <br>
+    <label for="parks">National Park:</label>
+    <br>
+        <select id="parks" name="post[park_id]">
+            <% @parks.each do |park| %>
+            <option value="<%= park.id %>" <%= 'selected' if park == @post.park %>><%= park.name %></option>
+            <% end %>
+        </select>
+    <br>
+    <br>
+    <label for="content">Content:</label>
+    <br>
+        <textarea id="content" name="post[content]" rows="12" cols="80"><%= @post.content %></textarea>
+    <br>
+    <br>
+    <label for="rating">Rating:</label>
+    <br>
+        <select id="rating" name="post[rating]">
+            <option value="5" <%= 'selected' if 5 == @post.rating %>>5 (highest)</option>
+            <option value="4" <%= 'selected' if 4 == @post.rating %>>4</option>
+            <option value="3" <%= 'selected' if 3 == @post.rating %>>3</option>
+            <option value="2" <%= 'selected' if 2 == @post.rating %>> 2</option>
+            <option value="1" <%= 'selected' if 1 == @post.rating %>>1 (lowest)</option>
+        </select>
+    <br>
+    <br>
+    <input type="submit" value="Create Review">
+<form>

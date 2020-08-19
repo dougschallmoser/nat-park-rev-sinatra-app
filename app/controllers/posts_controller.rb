@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     end
     
     get '/posts/:id' do 
-        @post = Post.find(params[:id])
+        @post = Post.find_by(:id => params[:id])
         erb :"posts/show"
     end
 
@@ -28,6 +28,23 @@ class PostsController < ApplicationController
         post.user = current_user
         post.save
         redirect "/users/#{current_user.slug}"
+    end
+
+    get '/posts/:id/edit' do
+        if logged_in?
+            @post = Post.find_by(:id => params[:id])
+            @parks = Park.all
+            if @post && @post.user == current_user
+                erb :"posts/edit"
+            else 
+                redirect "/posts"
+            end
+        else 
+            redirect "/login"
+        end
+    end
+
+    patch '/posts/:id' do 
     end
 
 

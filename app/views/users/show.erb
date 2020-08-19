@@ -11,11 +11,11 @@ You are logged in as: <%= @user.name %>
     </tr>
     <tr class="rev_head_info">
         <% @user.posts.order(:created_at => :desc).each do |post| %>
-            <td><a href="posts/<%= post.id %>"><%= post.title %></td>
-            <td><a href="parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
+            <td><a href="../posts/<%= post.id %>"><%= post.title %></td>
+            <td><a href="../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
             <td><%= post.created_at %></td>
             <td><%= post.rating %></td>
-            <td>EDIT POST</td>
+            <td><a href="../posts/<%= post.id %>/edit">EDIT POST</a></td>
             <td>DELETE POST</td>
     </tr>
     <tr class="rev_content">
