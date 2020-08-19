@@ -3,7 +3,7 @@
 ## Users ##
 doug = User.create(:name => "Doug", :username => "dougr81", :email => "dougr81@hotmail.com", :password => "monkey")
 
-skittles = User.create(:name => "Skittles", :username => "skittles123", :email => "skittles123@gmail.com", :password => "iluveskittles")
+skittles = User.create(:name => "Skittles", :username => "skittles123", :email => "skittles123@gmail.com", :password => "iluvskittles")
 
 erin = User.create(:name => "Erin", :username => "branzell", :email => "erin@aol.com", :password => "brass")
 
