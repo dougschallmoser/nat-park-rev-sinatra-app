@@ -1,4 +1,3 @@
-
 source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
@@ -13,4 +12,3 @@ gem 'bcrypt'
 gem 'sqlite3'
 gem 'require_all'
 gem 'rack-flash3'
-gem 'nokogiri'
