@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     get '/signup' do
         if !logged_in?
-            erb :"users/new"
+            erb :"users/signup"
         else 
             redirect "/users/#{current_user.slug}"
         end

@@ -18,16 +18,16 @@ class PostsController < ApplicationController
         end
     end
     
-    get '/posts/:id' do 
-        @post = Post.find_by(:id => params[:id])
-        erb :"posts/show"
-    end
-
     post '/posts' do
         post = Post.new(params[:post])
         post.user = current_user
         post.save
         redirect "/users/#{current_user.slug}"
+    end
+
+    get '/posts/:id' do 
+        @post = Post.find_by(:id => params[:id])
+        erb :"posts/show"
     end
 
     get '/posts/:id/edit' do
@@ -46,12 +46,12 @@ class PostsController < ApplicationController
 
     patch '/posts/:id' do 
         if logged_in?
-            @post = Post.find_by(:id => params[:id])
-            if @post && @post.user == current_user
-                if @post.update(params[:post])
-                    redirect "/posts/#{@post.id}"
+            post = Post.find_by(:id => params[:id])
+            if post && post.user == current_user
+                if post.update(params[:post])
+                    redirect "/posts/#{post.id}"
                 else
-                    redirect "/posts/#{@post.id}/edit"
+                    redirect "/posts/#{post.id}/edit"
                 end
             else
                 redirect "/posts"
@@ -63,9 +63,9 @@ class PostsController < ApplicationController
 
     delete '/posts/:id' do 
         if logged_in?
-            @post = Post.find_by(:id => params[:id])
-            if @post && @post.user == current_user
-                @post.delete 
+            post = Post.find_by(:id => params[:id])
+            if post && post.user == current_user
+                post.delete 
                 redirect "/users/#{current_user.slug}"
             end
         else
