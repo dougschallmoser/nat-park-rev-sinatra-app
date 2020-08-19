@@ -45,6 +45,20 @@ class PostsController < ApplicationController
     end
 
     patch '/posts/:id' do 
+        if logged_in?
+            @post = Post.find_by(:id => params[:id])
+            if @post && @post.user == current_user
+                if @post.update(params[:post])
+                    redirect "/posts/#{@post.id}"
+                else
+                    redirect "/posts/#{@post.id}/edit"
+                end
+            else
+                redirect "/posts"
+            end
+        else
+            redirect "login"
+        end
     end
 
 
