@@ -3,12 +3,12 @@
     <input type="hidden" id="hidden" name="_method" value="patch">
     <label for="title">Title:</label>
     <br>
-        <input type="text" id="title" name="post[title]" size="81" value="<%= @post.title %>">
+        <input type="text" id="title" name="post[title]" size="81" value="<%= @post.title %>" required="required">
     <br>
     <br>
     <label for="parks">National Park:</label>
     <br>
-        <select id="parks" name="post[park_id]">
+        <select id="parks" name="post[park_id]" required>
             <% @parks.each do |park| %>
             <option value="<%= park.id %>" <%= 'selected' if park == @post.park %>><%= park.name %></option>
             <% end %>
@@ -17,12 +17,12 @@
     <br>
     <label for="content">Content:</label>
     <br>
-        <textarea id="content" name="post[content]" rows="12" cols="80"><%= @post.content %></textarea>
+        <textarea id="content" name="post[content]" rows="12" cols="80" required="required"><%= @post.content %></textarea>
     <br>
     <br>
     <label for="rating">Rating:</label>
     <br>
-        <select id="rating" name="post[rating]">
+        <select id="rating" name="post[rating]" required>
             <option value="5" <%= 'selected' if 5 == @post.rating %>>5 (highest)</option>
             <option value="4" <%= 'selected' if 4 == @post.rating %>>4</option>
             <option value="3" <%= 'selected' if 3 == @post.rating %>>3</option>

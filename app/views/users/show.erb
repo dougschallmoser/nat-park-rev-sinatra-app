@@ -15,8 +15,15 @@ You are logged in as: <%= @user.name %>
             <td><a href="../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
             <td><%= post.created_at %></td>
             <td><%= post.rating %></td>
-            <td><a href="../posts/<%= post.id %>/edit">EDIT POST</a></td>
-            <td>DELETE POST</td>
+            <td><form method="get" action="/posts/<%= post.id %>/edit">
+                    <input type="submit" value="Edit">
+                </form>
+            </td>
+            <td><form method="POST" action="/posts/<%= post.id %>">
+                    <input type="hidden" id="hidden" name="_method" value="delete">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
     </tr>
     <tr class="rev_content">
             <td = colspan="6"><%= post.content %></td>

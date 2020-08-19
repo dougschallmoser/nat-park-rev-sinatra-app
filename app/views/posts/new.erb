@@ -2,12 +2,12 @@
 <form method="POST" action="/posts">
     <label for="title">Title:</label>
     <br>
-        <input type="text" id="title" name="post[title]" size="81">
+        <input type="text" id="title" name="post[title]" size="81" required="required">
     <br>
     <br>
     <label for="parks">National Park:</label>
     <br>
-        <select id="parks" name="post[park_id]">
+        <select id="parks" name="post[park_id]" required>
             <option value="" selected disabled hidden>select park</option>
             <% @parks.each do |park| %>
             <option value="<%= park.id %>"><%= park.name %></option>
@@ -17,12 +17,12 @@
     <br>
     <label for="content">Content:</label>
     <br>
-        <textarea id="content" name="post[content]" placeholder="Enter your review here." rows="12" cols="80"></textarea>
+        <textarea id="content" name="post[content]" placeholder="Enter your review here." rows="12" cols="80" required="required"></textarea>
     <br>
     <br>
     <label for="rating">Rating:</label>
     <br>
-        <select id="rating" name="post[rating]">
+        <select id="rating" name="post[rating]" required>
             <option value="" selected disabled hidden>select rating</option>
             <option value="5">5 (highest)</option>
             <option value="4">4</option>

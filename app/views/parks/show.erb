@@ -9,7 +9,7 @@
         <th>Rating</th>
     </tr>
     <tr class="rev_head_info">
-        <% @park.posts.each do |post| %>
+        <% @park.posts.order(:created_at => :desc).each do |post| %>
             <td><a href="../posts/<%= post.id %>"><%= post.title %></a></td>
             <td><%= post.park.name %></a></td>
             <td><%= post.created_at %></td>

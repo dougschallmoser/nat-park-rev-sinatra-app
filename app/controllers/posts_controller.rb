@@ -61,5 +61,16 @@ class PostsController < ApplicationController
         end
     end
 
+    delete '/posts/:id' do 
+        if logged_in?
+            @post = Post.find_by(:id => params[:id])
+            if @post && @post.user == current_user
+                @post.delete 
+                redirect "/users/#{current_user.slug}"
+            end
+        else
+            redirect "/login"
+        end
+    end
 
 end
