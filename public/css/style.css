@@ -109,6 +109,10 @@ td.form-value {
   background-color: #FBFFF4;
 }
 
+.alert {
+  color: red;
+}
+
 .flex-container {
   display: flex;
   width: 100vw;
