@@ -1,4 +1,26 @@
 
+<br>
+<h2>Reviews</h2>
+<table class="data">
+    <tr>
+        <th>Title</th>
+        <th>Park Name</th>
+        <th>Date Created</th>
+        <th>Rating</th>
+    </tr>
+            <% @posts.order(:created_at => :desc).each do |post| %>
+    <tr>
+            <td><a href="posts/<%= post.id %>"><%= post.title %></td>
+            <td><a href="parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
+            <td><%= post.created_at %></td>
+            <td><%= post.rating %>/5</td>
+    </tr>
+    <% end %>
+    </table>
+
+
+<br>
+<h2>Reviews</h2>
 <% @posts.order(:created_at => :desc).each do |post| %>
 <table class="data">
     <tr>
@@ -7,11 +29,11 @@
         <th>Date Created</th>
         <th>Rating</th>
     </tr>
-    <tr class="rev_head_info">
+    <tr>
             <td><a href="posts/<%= post.id %>"><%= post.title %></td>
             <td><a href="parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
             <td><%= post.created_at %></td>
-            <td><%= post.rating %></td>
+            <td><%= post.rating %>/5</td>
     </tr>
     <tr>
             <td class="rev-content" colspan="4"><%= logged_in? ? post.content : post.content.truncate(50) + " Login to read more" %></td>
