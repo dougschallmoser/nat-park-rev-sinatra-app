@@ -109,17 +109,6 @@ td.form-value {
   background-color: #FBFFF4;
 }
 
-.alert {
-  color: red;
-}
-
-.flex-container {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  flex-direction: column;
-}
-
 a:link {
   color: #385257;
 }
@@ -132,11 +121,26 @@ a:hover {
   color: #65939c;
 }
 
-* {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-  text-align: center;
+.alert {
+  color: red;
+}
+
+.flex-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+}
+
+td.rev-content {
+  text-align: left;
+}
+
+.item {
+  height: 100%;
+  width: 100%;
+  margin: 5px;
+  background-color: #FBFFF4;
 }
 
 h2 {
@@ -149,9 +153,9 @@ h3 {
   text-align: center;
 }
 
-.item {
-  height: 100%;
-  width: 100%;
-  margin: 5px;
-  background-color: #FBFFF4;
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
 }

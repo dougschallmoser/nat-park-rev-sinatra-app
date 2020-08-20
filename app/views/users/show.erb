@@ -2,33 +2,35 @@
 <% if flash.has?(:message) %>
   <%= flash[:message] %>
 <% end %>
-<h3>Your reviews</h3>
-
-<table class="data">
-    <tr>
-        <th>Title</th>
-        <th>Park Name</th>
-        <th>Date Created</th>
-        <th>Rating</th>
-    </tr>
-    <tr class="rev_head_info">
-        <% @user.posts.order(:created_at => :desc).each do |post| %>
-            <td><a href="../posts/<%= post.id %>"><%= post.title %></td>
-            <td><a href="../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
-            <td><%= post.created_at %></td>
-            <td><%= post.rating %></td>
-            <td><form method="get" action="/posts/<%= post.id %>/edit">
+<h3>Your Reviews</h3>
+<br>
+<% @user.posts.order(:created_at => :desc).each do |post| %>
+    <table class="data">
+        <tr>
+            <th>Title</th>
+            <th>Park Name</th>
+            <th>Date Created</th>
+            <th>Rating</th>
+            <th rowspan="2">
+                <form method="get" action="/posts/<%= post.id %>/edit">
                     <input type="submit" value="Edit">
                 </form>
-            </td>
-            <td><form method="POST" action="/posts/<%= post.id %>">
+            </th>
+            <th rowspan="2">
+                <form method="POST" action="/posts/<%= post.id %>">
                     <input type="hidden" id="hidden" name="_method" value="delete">
                     <input type="submit" value="Delete">
                 </form>
-            </td>
-    </tr>
-    <tr class="rev_content">
-            <td = colspan="6"><%= post.content %></td>
-    </tr>
-        <% end %>
-<table>
+            </th>
+        </tr>
+        <tr>
+                <td><a href="../posts/<%= post.id %>"><%= post.title %></td>
+                <td><a href="../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
+                <td><%= post.created_at %></td>
+                <td><%= post.rating %></td>
+        </tr>
+        <tr>
+                <td class="rev-content" colspan="6"><%= post.content %></td>
+        </tr>
+    </table>
+<% end %>
