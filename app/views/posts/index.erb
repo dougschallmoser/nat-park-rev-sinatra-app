@@ -1,5 +1,5 @@
 <br>
-<h2>Reviews</h2>
+<h2>All Reviews</h2>
 <table class="sort">
         <tr>
                 <th>Filter By Park:</td>
@@ -13,8 +13,8 @@
                 <th>Filter By State:</td>
                 <td><select onChange="window.location.href=this.value">>
                         <option value="" selected disabled hidden>none</option>
-                        <% @parks.each do |park| %>
-                        <option value="/parks/states/<%= park.slug_state %>"><%= park.state %></option>
+                        <% @states_unique.each do |state| %>
+                        <option value="/parks/states/<%= state.downcase.strip.gsub(' ', '-') %>"><%= state %></option>
                          <% end %>
                         </select>
                 </td>

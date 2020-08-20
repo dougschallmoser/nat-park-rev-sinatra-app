@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     get '/posts' do 
         @posts = Post.all
         @parks = Park.all
+        @states_unique = Park.all.collect{|park| park.state}.uniq
         erb :"posts/index"
     end 
     
