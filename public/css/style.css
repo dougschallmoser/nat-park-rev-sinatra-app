@@ -28,12 +28,14 @@ footer {
 
 nav {
   font-size: 18px;
+  align-items: left;
 }
 
 nav a {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  text-align: left;
   font-size: 22px;
 }
 
@@ -139,7 +141,7 @@ h2 {
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
 }
 

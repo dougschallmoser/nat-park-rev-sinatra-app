@@ -14,7 +14,7 @@
                 <td><select onChange="window.location.href=this.value">>
                         <option value="" selected disabled hidden>none</option>
                         <% @parks.each do |park| %>
-                        <option value="/states/<%= park.slug_state %>"><%= park.state %></option>
+                        <option value="/parks/states/<%= park.slug_state %>"><%= park.state %></option>
                          <% end %>
                         </select>
                 </td>
