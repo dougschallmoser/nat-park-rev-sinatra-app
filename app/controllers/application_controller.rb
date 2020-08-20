@@ -39,7 +39,7 @@ class ApplicationController < Sinatra::Base
                 <a href='/posts'>Reviews</a> |
                 <a href='/users/#{current_user.slug}'>My Page</a> |
                 <a href='/posts/new'>Create</a> |
-                <a href='/logout'>Sign Out</a> |
+                <a href='/logout'>Logout</a> |
                 You are logged in as: #{current_user.username}
                 DOC
         end
@@ -49,7 +49,7 @@ class ApplicationController < Sinatra::Base
                 <a href='/'>NatParkRev</a> |
                 <a href='/posts'>Reviews</a> |
                 <a href='/signup'>Sign Up</a> |
-                <a href='/login'>Sign In</a>
+                <a href='/login'>Login</a>
                 DOC
         end
 

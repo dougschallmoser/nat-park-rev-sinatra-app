@@ -14,7 +14,7 @@
             <td><%= post.rating %></td>
     </tr>
     <tr>
-            <td class="rev-content" colspan="4"><%= logged_in? ? post.content : post.content.truncate(35) %></td>
+            <td class="rev-content" colspan="4"><%= logged_in? ? post.content : post.content.truncate(50) + " Login to read more" %></td>
     </tr>
     </table>
         <% end %>

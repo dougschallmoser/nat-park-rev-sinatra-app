@@ -5,7 +5,7 @@ body {
 
 header {
   background-color: #DAEEEF;
-  height: 70px;
+  height: 40px;
   width: 100%;
 }
 
@@ -21,18 +21,30 @@ main {
 
 footer {
   background-color: #DAEEEF;
-  height: 70px;
+  height: 40px;
   width: 100%;
 }
 
 nav {
+  font-size: 18px;
+}
+
+nav a {
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+nav a:hover {
+  font-size: 28px;
+  text-decoration: none;
 }
 
 table {
   border-spacing: 0px;
   border: 1px dashed black;
+  width: 100%;
 }
 
 th, td {
@@ -50,7 +62,28 @@ td {
   text-align: center;
 }
 
+table.login {
+  border-spacing: 0px;
+  border: none;
+  height: 40%;
+}
+
+table.signup {
+  border-spacing: 0px;
+  border: none;
+  height: 40%;
+  width: 35%;
+}
+
 td.rev-content {
+  text-align: left;
+}
+
+td.sign-up-label {
+  text-align: right;
+}
+
+td.sign-up-value {
   text-align: left;
 }
 
@@ -74,13 +107,25 @@ td.rev-content {
 
 a:link {
   color: #385257;
+  text-decoration: none;
 }
  
 a:visited {
   color: #385257;
+  text-decoration: none;
 }
 
 a:hover {
   color: #65939c;
+  text-decoration: none;
 }
 
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5
+}
+
+h2 {
+  font-size: 30px;
+}
