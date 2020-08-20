@@ -45,6 +45,7 @@ nav a:hover {
 table {
   border-spacing: 0px;
   border: 1px solid black;
+  width: 60%;
 }
 
 th, td {
@@ -129,10 +130,16 @@ a:hover {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
+  text-align: center;
 }
 
 h2 {
   font-size: 30px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 24px;
   text-align: center;
 }
 

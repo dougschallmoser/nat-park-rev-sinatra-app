@@ -1,5 +1,5 @@
 <br>
-<h2><%= @park.name %> National Park</h2>
+<h2><%= @posts[0].park.state if @posts[0] %> National Park</h2>
 <table class="data">
     <tr>
         <th>Title</th>
@@ -7,7 +7,7 @@
         <th>Date Created</th>
         <th>Rating</th>
     </tr>
-            <% @park.posts.order(:created_at => :desc).each do |post| %>
+            <% @posts.each do |post| %>
     <tr>
             <td><a href="../posts/<%= post.id %>"><%= post.title %></a></td>
             <td><%= post.park.name %></td>
@@ -16,3 +16,4 @@
     </tr>
     <% end %>
 </table>
+<h3><%= 'No reviews yet' if !@posts[0] %></h3>

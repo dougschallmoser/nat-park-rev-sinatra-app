@@ -9,4 +9,9 @@ class ParksController < ApplicationController
         erb :"parks/show"
     end
 
+    get '/states/:slug' do 
+        @posts = Post.find_by_slug_state(params[:slug])
+        erb :"parks/show_states"
+    end
+
 end

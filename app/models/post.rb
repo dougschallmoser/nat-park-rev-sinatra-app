@@ -15,4 +15,12 @@ class Post < ActiveRecord::Base
         self.all.detect {|post| post.park.slug == slug_name}
     end 
 
+    def slug_state
+        self.state.downcase.strip.gsub(' ', '-')
+    end
+
+    def self.find_by_slug_state(slug_name)
+        self.all.select {|post| post.park.slug_state == slug_name}
+    end 
+
 end

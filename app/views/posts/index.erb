@@ -1,19 +1,20 @@
-
 <br>
 <h2>Reviews</h2>
 <table class="sort">
         <tr>
-                <td>Sort By Park:</td>
+                <th>Filter By Park:</td>
                 <td><select onChange="window.location.href=this.value">>
+                        <option value="" selected disabled hidden>none</option>
                         <% @parks.each do |park| %>
                         <option value="/parks/<%= park.slug %>"><%= park.name %></option>
                          <% end %>
                         </select>
                 </td>
-                <td>Sort By State:</td>
+                <th>Filter By State:</td>
                 <td><select onChange="window.location.href=this.value">>
+                        <option value="" selected disabled hidden>none</option>
                         <% @parks.each do |park| %>
-                        <option value="/parks/<%= park.slug %>"><%= park.state %></option>
+                        <option value="/states/<%= park.slug_state %>"><%= park.state %></option>
                          <% end %>
                         </select>
                 </td>
