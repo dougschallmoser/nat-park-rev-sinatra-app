@@ -4,8 +4,9 @@
 <% end %>
 <h3>Your Reviews</h3>
 <br>
-<% @user.posts.order(:created_at => :desc).each do |post| %>
-    <table class="data">
+
+<table class="data">
+    <% @user.posts.order(:created_at => :desc).each do |post| %>
         <tr>
             <th>Title</th>
             <th>Park Name</th>
@@ -32,5 +33,5 @@
         <tr>
                 <td class="rev-content" colspan="6"><%= post.content %></td>
         </tr>
-    </table>
-<% end %>
+    <% end %>
+</table>

@@ -1,15 +1,12 @@
-
 <br>
-<table>
-    <tr><%= @post.title %></tr>
-    <br>
-    <tr><a href="/parks/<%= @post.park.slug %>"><%= @post.park.name %> National Park</a></tr>
-    <br>
+<h2>Review</h2>
+<table class="data">
+    <tr><h3>"<%= @post.title %>"</h3></tr>
+    <tr><h3><a href="/parks/<%= @post.park.slug %>"><%= @post.park.name %> National Park</a></h3></tr>
     <tr><%= @post.created_at %></tr>
     <br>
-    <tr>Rating: <%= @post.rating %></tr>
     <br>
-    <tr class="rev_content">
-        <td><%= @post.content %></td>
-    </tr>
+    <tr>Rating: <%= @post.rating %>/5</tr>
+    <br>
+    <tr><%= @post.content %></tr>
 </table>

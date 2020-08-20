@@ -121,6 +121,14 @@ a:hover {
   color: #65939c;
 }
 
+input { 
+  text-align: left;
+}
+
+textarea {
+  text-align: left;
+}
+
 .alert {
   color: red;
 }
@@ -155,7 +163,7 @@ h3 {
 
 * {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   text-align: center;
 }
