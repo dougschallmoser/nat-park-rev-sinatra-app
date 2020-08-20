@@ -29,30 +29,25 @@ class ApplicationController < Sinatra::Base
             end
         end
 
-        def logout
-            session.clear
-        end
-
         def display_nav_logged_in
-            logged_in_buttons = <<-DOC
+            <<-DOC
                 <a href='/'>NatParkRev</a> |
                 <a href='/posts'>Reviews</a> |
                 <a href='/users/#{current_user.slug}'>My Page</a> |
                 <a href='/posts/new'>Create</a> |
                 <a href='/logout'>Logout</a> |
                 You are logged in as: #{current_user.username}
-                DOC
+            DOC
         end
 
         def display_nav_not_logged_in
-            not_logged_in_buttons = <<-DOC
+            <<-DOC
                 <a href='/'>NatParkRev</a> |
                 <a href='/posts'>Reviews</a> |
                 <a href='/signup'>Sign Up</a> |
                 <a href='/login'>Login</a>
-                DOC
+            DOC
         end
-
     end
 
 end

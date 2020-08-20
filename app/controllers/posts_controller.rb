@@ -20,10 +20,14 @@ class PostsController < ApplicationController
     end
     
     post '/posts' do
-        post = Post.new(params[:post])
-        post.user = current_user
-        post.save
-        redirect "/users/#{current_user.slug}"
+        if logged_in?
+            post = Post.new(params[:post])
+            post.user = current_user
+            post.save
+            redirect "/users/#{current_user.slug}"
+        else 
+            redirect "/login"
+        end
     end
 
     get '/posts/:id' do 
