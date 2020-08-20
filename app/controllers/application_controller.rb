@@ -33,7 +33,7 @@ class ApplicationController < Sinatra::Base
             session.clear
         end
 
-        def logged_in_buttons
+        def display_nav_logged_in
             logged_in_buttons = <<-DOC
                 <a href='/'>NatParkRev</a> |
                 <a href='/posts'>Reviews</a> |
@@ -44,7 +44,7 @@ class ApplicationController < Sinatra::Base
                 DOC
         end
 
-        def not_logged_in_buttons
+        def display_nav_not_logged_in
             not_logged_in_buttons = <<-DOC
                 <a href='/'>NatParkRev</a> |
                 <a href='/posts'>Reviews</a> |
