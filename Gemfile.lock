@@ -18,12 +18,9 @@ GEM
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
-    mini_portile2 (2.4.0)
     minitest (5.14.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    nokogiri (1.10.10)
-      mini_portile2 (~> 2.4.0)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -58,7 +55,6 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   bcrypt
-  nokogiri
   pry
   rack-flash3
   rake
