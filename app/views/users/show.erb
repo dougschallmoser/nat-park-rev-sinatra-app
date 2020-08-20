@@ -2,7 +2,7 @@
 You are logged in as: <%= @user.username %>
 <h3>Your reviews</h3>
 
-<table>
+<table class="data">
     <tr>
         <th>Title</th>
         <th>Park Name</th>
@@ -27,9 +27,6 @@ You are logged in as: <%= @user.username %>
     </tr>
     <tr class="rev_content">
             <td = colspan="6"><%= post.content %></td>
-    </tr>
-    <tr class="blank_row"> 
-        <td>BLANK</td>
     </tr>
         <% end %>
 <table>

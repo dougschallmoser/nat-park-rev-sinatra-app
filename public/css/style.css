@@ -5,7 +5,7 @@ body {
 
 header {
   background-color: #DAEEEF;
-  height: 80px;
+  height: 70px;
   width: 100%;
 }
 
@@ -21,7 +21,7 @@ main {
 
 footer {
   background-color: #DAEEEF;
-  height: 80px;
+  height: 70px;
   width: 100%;
 }
 
@@ -30,9 +30,57 @@ nav {
   align-items: center;
 }
 
+table {
+  border-spacing: 0px;
+  border: 1px dashed black;
+}
+
+th, td {
+  text-align: center;
+}
+
+th {
+  background-color: #DAEEEF;
+  color: black;
+  text-align: center;
+}
+
+td {
+  background-color: #FBFFF4;
+  text-align: center;
+}
+
+td.rev-content {
+  text-align: left;
+}
+
 .flex-container {
   display: flex;
   width: 100vw;
   height: 100vh;
   flex-direction: column;
 }
+
+.data {
+  margin: auto;
+  width: 80% !important; 
+}
+
+.login {
+  margin: auto;
+  text-align: left;
+  width: 50% !important; 
+}
+
+a:link {
+  color: #385257;
+}
+ 
+a:visited {
+  color: #385257;
+}
+
+a:hover {
+  color: #65939c;
+}
+

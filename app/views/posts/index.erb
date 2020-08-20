@@ -1,5 +1,6 @@
-<br>
-<table>
+
+<% @posts.order(:created_at => :desc).each do |post| %>
+<table class="data">
     <tr>
         <th>Title</th>
         <th>Park Name</th>
@@ -7,17 +8,13 @@
         <th>Rating</th>
     </tr>
     <tr class="rev_head_info">
-        <% @posts.order(:created_at => :desc).each do |post| %>
             <td><a href="posts/<%= post.id %>"><%= post.title %></td>
             <td><a href="parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
             <td><%= post.created_at %></td>
             <td><%= post.rating %></td>
     </tr>
-    <tr class="rev_content">
-            <td = colspan="4"><%= logged_in? ? post.content : post.content.truncate(35) %></td>
+    <tr>
+            <td class="rev-content" colspan="4"><%= logged_in? ? post.content : post.content.truncate(35) %></td>
     </tr>
-    <tr class="blank_row"> 
-        <td>BLANK</td>
-    </tr>
+    </table>
         <% end %>
-</table>
