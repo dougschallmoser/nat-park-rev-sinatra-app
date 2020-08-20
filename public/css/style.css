@@ -45,7 +45,6 @@ nav a:hover {
 table {
   border-spacing: 0px;
   border: 1px solid black;
-  width: 100%;
 }
 
 th, td {
@@ -88,8 +87,12 @@ table.data {
   height: auto;
 }
 
-td.rev-content {
-  text-align: left;
+table.sort {
+  border-collapse: collapse; 
+  margin: auto;
+  width: 60%;
+  height: auto;
+  border: none;
 }
 
 td.form-label {

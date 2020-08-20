@@ -1,12 +1,25 @@
 
 <br>
 <h2>Reviews</h2>
-        <select onChange="window.location.href=this.value">>
-            <% @parks.each do |park| %>
-            <option value="/parks/<%= park.slug %>"><%= park.name %></option>
-            <% end %>
-        </select>
-
+<table class="sort">
+        <tr>
+                <td>Sort By Park:</td>
+                <td><select onChange="window.location.href=this.value">>
+                        <% @parks.each do |park| %>
+                        <option value="/parks/<%= park.slug %>"><%= park.name %></option>
+                         <% end %>
+                        </select>
+                </td>
+                <td>Sort By State:</td>
+                <td><select onChange="window.location.href=this.value">>
+                        <% @parks.each do |park| %>
+                        <option value="/parks/<%= park.slug %>"><%= park.state %></option>
+                         <% end %>
+                        </select>
+                </td>
+        </tr>
+</table>
+<br>
 <table class="data">
     <tr>
         <th>Title</th>
@@ -22,4 +35,4 @@
             <td><%= post.rating %>/5</td>
     </tr>
     <% end %>
-    </table>
+</table>
