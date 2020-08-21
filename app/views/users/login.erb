@@ -1,8 +1,6 @@
 <h2>Login</h2>
 
-<% if flash.has?(:credential_error) %>
   <span class="alert"><%= flash[:credential_error] %></span>
-<% end %>
 
 <table class="login">
     <form method="POST" action="/login">

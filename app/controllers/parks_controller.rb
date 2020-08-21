@@ -1,8 +1,5 @@
-require 'rack-flash'
 
 class ParksController < ApplicationController
-
-    use Rack::Flash
 
     get '/parks/:slug' do 
         if @park = Park.find_by_slug(params[:slug])

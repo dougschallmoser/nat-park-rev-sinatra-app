@@ -24,8 +24,9 @@ class PostsController < ApplicationController
         if logged_in?
             post = Post.new(params[:post])
             post.user = current_user
-            post.save
-            redirect "/users/#{current_user.slug}"
+            if post.save
+                redirect "/users/#{current_user.slug}"
+            end 
         else 
             redirect "/login"
         end
