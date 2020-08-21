@@ -14,7 +14,7 @@
         </tr>
                 <% @posts.each do |post| %>
         <tr>
-                <td><a href="../../posts/<%= post.id %>"><%= post.title %></a></td>
+                <td><a href="../../posts/<%= post.id %>"><%= post.capitalize_title %></a></td>
                 <td><a href="../../parks/<%= post.park.slug %>"><%= post.park.name %></td>
                 <td><%= post.convert_time %></td>
                 <td><%= post.rating %></td>

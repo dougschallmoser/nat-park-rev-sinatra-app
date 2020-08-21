@@ -22,6 +22,9 @@ covid_insights = Post.create(:title => "Covid insights", :content => "Obviously 
 
 friendly_staff = Post.create(:title => "Friendly park staff", :content => "I camped here with friends while we explored the Olympic peninsula. It was a lovely experience. We did an easy day hike and were able to see amazing waterfalls and glacier fed streams. We also drove to the salmon cascades (but didn't witness the salmon as we went at the wrong time of year) but the view was still pretty! Be sure to check out the Sol Duc Falls and the beaches if you can. Seeing the large driftwood on the beaches and the large rocks on the shoreline were unlike anything I have seen on the East Coast!", :rating => "4", :created_at => "2020-08-17 4:20:39 -0700")
 
+beautiful_places = Post.create(:title => "One of the most beautiful places", :content => "The shuttle went ok, it was hot and we had to make 3 stops along the way to drop people off which took 35 minutes. With no air conditioner and having to wear masks it was hot. However, the hike was worth it and you forgot all about the shuttle ride. Zion was absolutely the most beautiful thing we have ever seen. Purchase HIKING STICKS for everyone, they are a must! Walk far, don't stop the views get more beautiful the farther you go. What a great experience we had. Wear clothes that can get wet and shoes that cover your toes.", :rating => "5", :created_at => "2020-08-10 8:15:22 -0700")
+
+go_early = Post.create(:title => "Go early", :content => "Phenomenal and protected - so clean, vast and well managed, we absolutely loved the Road to the Sun and hikes we did. We did the road twice. Steep, narrow, and all that, but we were in a big pickup and did just fine. Many great places to stop and ogle. Driver needs to focus on the road... Early is best! Many many people want to hike Logan Pass, and by 7 am the parking lot was completely full with people waiting! We went on the road twice for the sunrise! Hike at Lake Mary is wonderful - but with crowds - early is better. Take water and first aid supplies and a wrap. It was windy one day, and got cloudy and temp dropped. This is simply an experience not to be missed.", :rating => "5", :created_at => "2020-08-04 12:04:09 -0700")
 
 
 ## Parks ##
@@ -120,3 +123,11 @@ covid_insights.save
 friendly_staff.user = doug 
 friendly_staff.park = Park.find_by(:name => "Olympic")
 friendly_staff.save
+
+beautiful_places.user = erin 
+beautiful_places.park = Park.find_by(:name => "Zion")
+beautiful_places.save 
+
+go_early.user = skittles 
+go_early.park = Park.find_by(name: "Zion")
+go_early.save

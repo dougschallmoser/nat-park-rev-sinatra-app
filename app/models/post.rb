@@ -17,6 +17,10 @@ class Post < ActiveRecord::Base
         self.all.select {|post| post.park.slug_state == slug_name}
     end 
 
+    def capitalize_title
+        self.title.split(" ").map(&:capitalize).join(" ")
+    end
+
     def convert_time
         time = (Time.current - self.created_at).to_i
         case time 
