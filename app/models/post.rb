@@ -23,4 +23,20 @@ class Post < ActiveRecord::Base
         self.all.select {|post| post.park.slug_state == slug_name}
     end 
 
+    def convert_time
+        time = (Time.current - self.created_at).to_i
+        case time 
+        when 0..60
+            "#{time}" + " secs ago"
+        when 60..3600
+            "#{time / 60}" + " mins ago"
+        when 3600..86400
+            "#{time / 3600}" + " hours ago"
+        when 86400..1727999
+            "#{time / 86400}" + " day ago"
+        else
+            "#{time / 86400}" + " days ago"
+        end
+    end
+
 end

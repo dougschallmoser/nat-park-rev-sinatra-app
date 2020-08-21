@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_08_17_235745) do
     t.string "title"
     t.string "content"
     t.integer "rating"
-    t.string "created_at"
+    t.datetime "created_at"
     t.integer "user_id"
     t.integer "park_id"
   end
