@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     get '/posts' do 
         @posts = Post.all
         @parks = Park.all
-        @unique_states = Park.all.collect{|park| park.state}.uniq
+        @unique_states = @parks.collect{|park| park.state}.uniq
         erb :"posts/index"
     end 
     
@@ -39,10 +39,11 @@ class PostsController < ApplicationController
     get '/posts/:id/edit' do
         redirect_if_not_logged_in
         @post = Post.find_by(:id => params[:id])
-        @parks = Park.all
         if @post && post_owner?(@post)
+            @parks = Park.all
             erb :"posts/edit"
         else 
+            flash[:permission] = "You do not have permission to edit that post."
             redirect "/posts"
         end
     end
