@@ -20,7 +20,7 @@ class UsersController < ApplicationController
             # redirect "/users/#{current_user.slug}"
             erb :"/users/show"
         else 
-            flash[:error] = "Username is taken. Please try again."
+            flash[:error] = "Username is already taken. Please try again."
             # redirect "/signup"
             erb :"users/signup"
         end 
