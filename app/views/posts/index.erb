@@ -5,7 +5,7 @@
 <table class="sort">
   <tr>
     <th>Filter By Park:</th>
-      <td>
+      <td class="my-page-subheading">
         <select onChange="window.location.href=this.value">
           <option value="none" selected disabled hidden>none</option>
           <% @parks.each do |park| %>
@@ -14,7 +14,7 @@
         </select>
       </td>
     <th>Filter By State:</th>
-      <td>
+      <td class="my-page-subheading">
         <select onChange="window.location.href=this.value">
           <option value="" selected disabled hidden>none</option>
           <% @unique_states.sort.each do |state| %>
