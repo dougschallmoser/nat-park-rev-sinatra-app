@@ -7,7 +7,7 @@
     <tr>
         <td class="show-review"><h4>Created by: <%= @post.user.username %></h4>
         <br><h4><a href="/parks/<%= @post.park.slug %>"><%= @post.park.name %> National Park</a></h4>
-        <br><h4><%= @post.created_at %></h4>
+        <br><h4><%= @post.created_at.strftime("%B %d, %Y at %I:%M %p") %></h4>
         <br><h4>Rating: <%= @post.rating %> out of 5</h4>
         </td>
     </tr>

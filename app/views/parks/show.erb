@@ -5,14 +5,14 @@
     <tr>
         <th>Title</th>
         <th>Park Name</th>
-        <th>Date Created</th>
+        <th>Created</th>
         <th>Rating</th>
     </tr>
             <% @park.posts.order(:created_at => :desc).each do |post| %>
     <tr>
             <td><a href="../posts/<%= post.id %>"><%= post.title %></a></td>
             <td><%= post.park.name %></td>
-            <td><%= post.created_at %></td>
+            <td><%= post.convert_time %></td>
             <td><%= post.rating %></td>
     </tr>
     <% end %>

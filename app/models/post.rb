@@ -32,7 +32,7 @@ class Post < ActiveRecord::Base
             "#{time / 60}" + " mins ago"
         when 3600..86400
             "#{time / 3600}" + " hours ago"
-        when 86400..1727999
+        when 86400..172799
             "#{time / 86400}" + " day ago"
         else
             "#{time / 86400}" + " days ago"
