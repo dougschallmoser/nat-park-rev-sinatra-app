@@ -36,8 +36,8 @@ class ApplicationController < Sinatra::Base
 
         def redirect_if_not_post_owner(post)
             if !post || !post_owner?(post)
-                flash[:permission] = "You do not have permission to edit that post."
-                redirect "/posts"
+                flash[:permission] = "You do not have permission to alter that post."
+                redirect "/users/#{current_user.slug}"
             end
         end
 

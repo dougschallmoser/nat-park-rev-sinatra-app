@@ -20,13 +20,15 @@ class UsersController < ApplicationController
         end 
     end
     
-    get '/users/:slug' do 
-        if logged_in?
-            @user = User.find_by_slug(params[:slug])
+    get '/users/:username' do 
+        redirect_if_not_logged_in
+        @user = User.find_by_slug(params[:username])
+        if @user && @user.username == session[:username]
             erb :"/users/show"
-        else 
-            redirect "/login"
-        end
+        else
+            flash[:permission] = "You do not have permission to view that user's page."
+            redirect "/users/#{current_user.slug}"
+        end 
     end
     
     get '/login' do 

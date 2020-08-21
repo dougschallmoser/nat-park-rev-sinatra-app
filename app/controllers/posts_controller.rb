@@ -60,11 +60,11 @@ class PostsController < ApplicationController
     delete '/posts/:id' do 
         redirect_if_not_logged_in
         post = Post.find_by(:id => params[:id])
-        if post && post_owner?(post)
-            post.delete 
+        redirect_if_not_post_owner(post)
+        if post.delete 
             flash[:message] = "Review deleted successfully."
         else
-            flash[:message] = "You do not have permission to delete that review."
+            flash[:message] = "Something went wrong and the review was not deleted."
         end
         redirect "/users/#{current_user.slug}"
     end
