@@ -33,57 +33,46 @@ class PostsController < ApplicationController
     end
 
     get '/posts/:id' do 
-        if logged_in?
-            if @post = Post.find_by(:id => params[:id])
-                erb :"posts/show"
-            else
-                erb :"/posts/error"
-            end 
+        redirect_if_not_logged_in
+        if @post = Post.find_by(:id => params[:id])
+            erb :"posts/show"
         else
-            redirect "/login"
-        end
+            erb :"/posts/error"
+        end 
     end
 
     get '/posts/:id/edit' do
-        if logged_in?
-            @post = Post.find_by(:id => params[:id])
-            @parks = Park.all
-            if @post && @post.user == current_user
-                erb :"posts/edit"
-            else 
-                redirect "/posts"
-            end
+        redirect_if_not_logged_in
+        @post = Post.find_by(:id => params[:id])
+        @parks = Park.all
+        if @post && is_post_owner(@post)
+            erb :"posts/edit"
         else 
-            redirect "/login"
+            redirect "/posts"
         end
     end
 
     patch '/posts/:id' do 
-        if logged_in?
-            post = Post.find_by(:id => params[:id])
-            if post && post.user == current_user
-                if post.update(params[:post])
-                    redirect "/posts/#{post.id}"
-                else
-                    redirect "/posts/#{post.id}/edit"
-                end
+        redirect_if_not_logged_in
+        post = Post.find_by(:id => params[:id])
+        if post && is_post_owner(post)
+            if post.update(params[:post])
+                redirect "/posts/#{post.id}"
             else
-                redirect "/posts"
+                redirect "/posts/#{post.id}/edit"
             end
         else
-            redirect "login"
+            redirect "/posts"
         end
     end
 
     delete '/posts/:id' do 
-        if logged_in?
-            post = Post.find_by(:id => params[:id])
-            if post && post.user == current_user
-                post.delete 
-                redirect "/users/#{current_user.slug}"
-            end
+        redirect_if_not_logged_in
+        post = Post.find_by(:id => params[:id])
+        if post && is_post_owner(post)
+            post.delete 
         else
-            redirect "/login"
+            redirect "/users/#{current_user.slug}"
         end
     end
 
