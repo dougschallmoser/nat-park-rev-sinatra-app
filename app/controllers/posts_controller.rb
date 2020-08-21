@@ -1,8 +1,8 @@
-require 'rack-flash'
+# require 'rack-flash'
 
 class PostsController < ApplicationController
 
-    use Rack::Flash
+    # use Rack::Flash
 
     get '/posts' do 
         @posts = Post.all
@@ -21,14 +21,15 @@ class PostsController < ApplicationController
     end
     
     post '/posts' do
-        if logged_in?
-            post = Post.new(params[:post])
-            post.user = current_user
-            if post.save
-                redirect "/users/#{current_user.slug}"
-            end 
+        redirect_if_not_logged_in
+        post = Post.new(params[:post])
+        post.user = current_user
+        if post.save
+            flash[:message] = "Review successfully saved."
+            redirect "/posts/#{post.id}"
         else 
-            redirect "/login"
+            flash[:message] = "Review did not save."
+            redirect "/users/#{current_user.slug}"
         end
     end
 
@@ -70,10 +71,12 @@ class PostsController < ApplicationController
         redirect_if_not_logged_in
         post = Post.find_by(:id => params[:id])
         if post && is_post_owner(post)
+            flash[:message] = "Review successfully deleted."
             post.delete 
         else
-            redirect "/users/#{current_user.slug}"
+            flash[:message] = "You do not have permission to delete that review."
         end
+        redirect "/users/#{current_user.slug}"
     end
 
 end
