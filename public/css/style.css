@@ -47,7 +47,7 @@ nav a:hover {
 table {
   border-spacing: 0px;
   border: 1px solid black;
-  width: 60%;
+  width: 80%;
 }
 
 th, td {
@@ -102,14 +102,14 @@ table.signup {
 table.data {
   border-collapse: collapse; 
   margin: auto;
-  width: 60%;
+  width: 80%;
   height: auto;
 }
 
 table.sort {
   border-collapse: collapse; 
   margin: auto;
-  width: 60%;
+  width: 80%;
   height: auto;
   border: none;
 }
