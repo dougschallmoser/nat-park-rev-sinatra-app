@@ -19,6 +19,14 @@ bad_park = Post.create(:title => "Worst Exerience Ever", :content => "I wish tho
 
 so_so = Post.create(:title => "So So", :content => "Yes it’s a quick journey through unless you decide to go camping or hiking but it’s still worth a day or two. I managed to do all the way through to Chelan from Seattle in a day and if just stopping at overlooks then you can do that.", :rating => "3", :created_at => "2020-08-20 17:21:48 -0700")
 
+beautiful_drive = Post.create(:title => "Beautiful drive on a hot summer morning!", :content => "My wife and I recently decided to get out of the house and take a drive. We took the 9 mile drive through Saguaro National Park East. We've enjoyed hiking here in the past, but not with 100+ degree temperatures. So with the AC running in the comfort of our vehicle, we took in the beautiful scenery of majestic saguaro cacti and mountains. Nice way to enjoy the desert on a hot, summer day!", :rating => "5", :created_at => "2020-08-14 7:19:30 -0700")
+
+covid_insights = Post.create(:title => "Covid insights", :content => "Obviously Denali itself is amazing - no need to rate or review the park itself. Tons of wildlife around. A quick FYI though - the Transit Bus is usually marketed as a flexible hop-on - hop-off type of tour. The idea is you can get off of one bus, walk around and explore for a bit, and then hop on another later to get back out of the park where you left off. This is NOT the case right now. Basically, we were warned that if we left our tour bus at any time, that we might have to wait for 3 hours before another bus came by that had room for us...... yet somehow ours kept picking up campers along the way at other stops. I understand buses are limited bc of resources right now, but you cant make it so that people are scared into not exploring the park at all. It's a real shame that there is no flexibility at all right now. Additionally, our transit bus driver Scott was a bit of a pill. He was very rigid and inflexible about everything. He made it so that the bus was afraid to breathe or move, which seriously minimized the enjoyment of the tour...... especially since we couldnt get off of the bus and try another bus/driver like normal. Scott clearly was a wealth of knowledge, but the way he presented the information was in a very condescending way. His demeanor was sarcastic and unpleasant. His comments and answers to people were very snippy and arrogant as if the guests were below him and a bother. I've been on a lot of safaris and wildlife tours, and the guides are always amazing - I was sad to see one in my own country be so rude. I originally was considering doing one of the more expensive tours, but opted for the transit bus to have flexibility, which apparently doesnt exist right now. Just know this going into things this current tourist season.", :rating => "4", :created_at => "2020-08-11 9:51:13 -0700")
+
+friendly_staff = Post.create(:title => "Friendly park staff", :content => "I camped here with friends while we explored the Olympic peninsula. It was a lovely experience. We did an easy day hike and were able to see amazing waterfalls and glacier fed streams. We also drove to the salmon cascades (but didn't witness the salmon as we went at the wrong time of year) but the view was still pretty! Be sure to check out the Sol Duc Falls and the beaches if you can. Seeing the large driftwood on the beaches and the large rocks on the shoreline were unlike anything I have seen on the East Coast!", :rating => "4", :created_at => "2020-08-17 4:20:39 -0700")
+
+
+
 ## Parks ##
 parks = [
     {name: "Acadia", state: "Maine"},
@@ -103,3 +111,15 @@ bad_park.save
 so_so.user = doug 
 so_so.park = Park.find_by(:name => "North Cascades") 
 so_so.save 
+
+beautiful_drive.user = erin 
+beautiful_drive.park = Park.find_by(:name => "Saguaro")
+beautiful_drive.save
+
+covid_insights.user = skittles 
+covid_insights.park = Park.find_by(:name => "Denali")
+covid_insights.save
+
+friendly_staff.user = doug 
+friendly_staff.park = Park.find_by(:name => "Olympic")
+friendly_staff.save
