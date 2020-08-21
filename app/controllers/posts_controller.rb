@@ -1,8 +1,5 @@
-# require 'rack-flash'
 
 class PostsController < ApplicationController
-
-    # use Rack::Flash
 
     get '/posts' do 
         @posts = Post.all
@@ -71,8 +68,8 @@ class PostsController < ApplicationController
         redirect_if_not_logged_in
         post = Post.find_by(:id => params[:id])
         if post && is_post_owner(post)
-            flash[:message] = "Review successfully deleted."
             post.delete 
+            flash[:message] = "Review successfully deleted."
         else
             flash[:message] = "You do not have permission to delete that review."
         end

@@ -1,9 +1,6 @@
 
-# require 'sinatra/flash'
-
 class ApplicationController < Sinatra::Base
 
-    # use Rack::Flash
     register Sinatra::Flash
 
     configure do 
@@ -12,7 +9,6 @@ class ApplicationController < Sinatra::Base
         set :views, "app/views"
         set :public_folder, "public"
     end 
-
 
     get '/' do 
         erb :index

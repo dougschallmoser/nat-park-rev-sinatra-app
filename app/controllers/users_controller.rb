@@ -1,8 +1,5 @@
-# require 'rack-flash'
 
 class UsersController < ApplicationController
-
-    # use Rack::Flash
 
     get '/signup' do
         if !logged_in?
@@ -17,12 +14,10 @@ class UsersController < ApplicationController
         if @user.save
             login(params[:user][:username], params[:user][:password])
             flash[:message] = "Account successfully created!"
-            # redirect "/users/#{current_user.slug}"
-            erb :"/users/show"
+            redirect "/users/#{current_user.slug}"
         else 
-            flash[:error] = "Username is already taken. Please try again."
-            # redirect "/signup"
-            erb :"users/signup"
+            flash[:message] = "Username is already taken. Please try again."
+            redirect "/signup"
         end 
     end
     
