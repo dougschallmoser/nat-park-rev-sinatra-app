@@ -9,12 +9,9 @@ class PostsController < ApplicationController
     end 
     
     get '/posts/new' do 
-        if logged_in?
-            @parks = Park.all
-            erb :"posts/new"
-        else 
-            redirect "/login"
-        end
+        redirect_if_not_logged_in
+        @parks = Park.all
+        erb :"posts/new"
     end
     
     post '/posts' do
