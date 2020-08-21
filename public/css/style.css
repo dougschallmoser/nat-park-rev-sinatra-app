@@ -138,6 +138,11 @@ textarea {
   color: red;
 }
 
+.redText {
+  color: red;
+  font-size: 14px;
+}
+
 .flex-container {
   display: flex;
   width: 100vw;
@@ -167,6 +172,14 @@ h3 {
 
 h4 {
   font-size: 18px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  font-size: 14px;
+  display: inline;
   text-align: center;
   margin: 0;
   padding: 0;

@@ -37,13 +37,13 @@ class ApplicationController < Sinatra::Base
             user = User.find_by(:username => username)
             if user && user.authenticate(password)
                 session[:username] = user.username 
+                flash[:logged_in] = "You have successfully logged in."
                 redirect "/users/#{current_user.slug}"
             else 
                 flash[:credential_error] = "Invalid credentials. Please try again."
-                erb :"users/login"
+                redirect "/login"
             end
         end
-
 
         def display_nav_logged_in
             <<-DOC
@@ -52,7 +52,7 @@ class ApplicationController < Sinatra::Base
                 <a href='/users/#{current_user.slug}'>My Page</a> |
                 <a href='/posts/new'>Create</a> |
                 <a href='/logout'>Logout</a> |
-                You are logged in as: #{current_user.username}
+                <h5>You are logged in as: <span class="redText">#{current_user.username}</span></h5>
             DOC
         end
 
