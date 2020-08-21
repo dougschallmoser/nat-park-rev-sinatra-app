@@ -39,27 +39,21 @@ class PostsController < ApplicationController
     get '/posts/:id/edit' do
         redirect_if_not_logged_in
         @post = Post.find_by(:id => params[:id])
-        if @post && post_owner?(@post)
-            @parks = Park.all
-            erb :"posts/edit"
-        else 
-            flash[:permission] = "You do not have permission to edit that post."
-            redirect "/posts"
-        end
+        redirect_if_not_post_owner(@post)
+        @parks = Park.all
+        erb :"posts/edit"
     end
 
     patch '/posts/:id' do 
         redirect_if_not_logged_in
         post = Post.find_by(:id => params[:id])
-        if post && post_owner?(post)
-            if post.update(params[:post])
-                flash[:edit] = "Changes saved successfully."
-                redirect "/posts/#{post.id}"
-            else
-                redirect "/posts/#{post.id}/edit"
-            end
+        redirect_if_not_post_owner(post)
+        if post.update(params[:post])
+            flash[:edit] = "Changes saved successfully."
+            redirect "/posts/#{post.id}"
         else
-            redirect "/posts"
+            flash[:edit_error] = "Something went wrong and changes were not saved."
+            redirect "/posts/#{post.id}/edit"
         end
     end
 
