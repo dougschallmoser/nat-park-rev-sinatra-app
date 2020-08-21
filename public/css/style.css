@@ -87,6 +87,7 @@ td.show-content {
   text-align: justify;
   border: none;
   font-weight: 300;
+  padding: 12px;
 }
 
 table.login {
