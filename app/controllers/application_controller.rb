@@ -72,6 +72,7 @@ class ApplicationController < Sinatra::Base
                 <a href='/login'>Login</a>
             DOC
         end
+
     end
 
 end
