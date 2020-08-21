@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     get '/posts' do 
         @posts = Post.all
         @parks = Park.all
-        @states_unique = Park.all.collect{|park| park.state}.uniq
+        @unique_states = Park.all.collect{|park| park.state}.uniq
         erb :"posts/index"
     end 
     
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
         redirect_if_not_logged_in
         @post = Post.find_by(:id => params[:id])
         @parks = Park.all
-        if @post && is_post_owner(@post)
+        if @post && post_owner?(@post)
             erb :"posts/edit"
         else 
             redirect "/posts"
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
     patch '/posts/:id' do 
         redirect_if_not_logged_in
         post = Post.find_by(:id => params[:id])
-        if post && is_post_owner(post)
+        if post && post_owner?(post)
             if post.update(params[:post])
                 redirect "/posts/#{post.id}"
             else
@@ -67,7 +67,7 @@ class PostsController < ApplicationController
     delete '/posts/:id' do 
         redirect_if_not_logged_in
         post = Post.find_by(:id => params[:id])
-        if post && is_post_owner(post)
+        if post && post_owner?(post)
             post.delete 
             flash[:message] = "Review successfully deleted."
         else

@@ -15,12 +15,22 @@ class ApplicationController < Sinatra::Base
     end
 
     helpers do
+        def current_user 
+            @current_user ||= User.find_by(:username => session[:username]) if session[:username]
+        end
+        
         def logged_in?
             !!current_user
         end
-
-        def current_user 
-            @current_user ||= User.find_by(:username => session[:username]) if session[:username]
+        
+        def redirect_if_not_logged_in
+            if !current_user
+                redirect "/login"
+            end
+        end
+        
+        def post_owner?(obj)
+            obj.user == current_user
         end
 
         def login(username, password)
@@ -34,15 +44,6 @@ class ApplicationController < Sinatra::Base
             end
         end
 
-        def redirect_if_not_logged_in
-            if !current_user
-                redirect "/login"
-            end
-        end
-
-        def is_post_owner(obj)
-            obj.user == current_user
-        end
 
         def display_nav_logged_in
             <<-DOC

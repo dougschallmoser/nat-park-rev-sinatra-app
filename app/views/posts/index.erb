@@ -13,8 +13,8 @@
                 <th>Filter By State:</td>
                 <td><select onChange="window.location.href=this.value">>
                         <option value="" selected disabled hidden>none</option>
-                        <% @states_unique.sort.each do |state| %>
-                        <option value="/parks/states/<%= state.downcase.strip.gsub(' ', '-') %>"><%= state %></option>
+                        <% @unique_states.sort.each do |state| %>
+                        <option value="/states/<%= state.downcase.strip.gsub(' ', '-') %>"><%= state %></option>
                          <% end %>
                         </select>
                 </td>
