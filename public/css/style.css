@@ -63,7 +63,7 @@ th {
 }
 
 td {
-  background-color: #FBFFF4;
+  background-color: #fffbf0;
   text-align: center;
 }
 
@@ -75,7 +75,7 @@ td.form-label {
 
 td.form-value {
   text-align: left;
-  background-color: #FBFFF4;
+  background-color: #fffbf0;
 }
 
 td.show-review {
@@ -152,7 +152,6 @@ td.rev-content {
 .item {
   height: 100%;
   width: 100%;
-  margin: 5px;
   background-color: #FBFFF4;
 }
 
