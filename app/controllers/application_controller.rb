@@ -25,6 +25,7 @@ class ApplicationController < Sinatra::Base
         
         def redirect_if_not_logged_in
             if !current_user
+                flash[:not_logged_in] = "You must be logged in to view, create, edit or delete reviews."
                 redirect "/login"
             end
         end

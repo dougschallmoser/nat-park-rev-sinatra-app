@@ -22,7 +22,7 @@ class PostsController < ApplicationController
         post = Post.new(params[:post])
         post.user = current_user
         if post.save
-            flash[:message] = "Review successfully saved."
+            flash[:message] = "Review successfully created."
             redirect "/posts/#{post.id}"
         else 
             flash[:message] = "Review did not save."
@@ -55,6 +55,7 @@ class PostsController < ApplicationController
         post = Post.find_by(:id => params[:id])
         if post && post_owner?(post)
             if post.update(params[:post])
+                flash[:edit] = "Changes saved successfully."
                 redirect "/posts/#{post.id}"
             else
                 redirect "/posts/#{post.id}/edit"
@@ -69,7 +70,7 @@ class PostsController < ApplicationController
         post = Post.find_by(:id => params[:id])
         if post && post_owner?(post)
             post.delete 
-            flash[:message] = "Review successfully deleted."
+            flash[:message] = "Review deleted successfully."
         else
             flash[:message] = "You do not have permission to delete that review."
         end

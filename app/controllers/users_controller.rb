@@ -13,7 +13,6 @@ class UsersController < ApplicationController
         @user = User.new(params[:user])
         if @user.save
             login(params[:user][:username], params[:user][:password])
-            flash[:message] = "Account successfully created!"
             redirect "/users/#{current_user.slug}"
         else 
             flash[:message] = "Username is already taken. Please try again."

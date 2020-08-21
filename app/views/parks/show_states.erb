@@ -1,20 +1,24 @@
 <br>
 <h2>Reviews</h2>
 <h3><%= @state_name %></h3>
-<table class="data">
-    <tr>
-        <th>Title</th>
-        <th>Park Name</th>
-        <th>Created</th>
-        <th>Rating</th>
-    </tr>
-            <% @posts.each do |post| %>
-    <tr>
-            <td><a href="../../posts/<%= post.id %>"><%= post.title %></a></td>
-            <td><a href="../../parks/<%= post.park.slug %>"><%= post.park.name %></td>
-            <td><%= post.convert_time %></td>
-            <td><%= post.rating %></td>
-    </tr>
-    <% end %>
-</table>
-<h3><%= 'No reviews yet' if !@posts[0] %></h3>
+
+<% if !@posts[0] %>
+    <span class="alert"><%= 'No reviews have been posted yet.' %></span>
+<% else %>
+    <table class="data">
+        <tr>
+            <th>Title</th>
+            <th>Park Name</th>
+            <th>Created</th>
+            <th>Rating</th>
+        </tr>
+                <% @posts.each do |post| %>
+        <tr>
+                <td><a href="../../posts/<%= post.id %>"><%= post.title %></a></td>
+                <td><a href="../../parks/<%= post.park.slug %>"><%= post.park.name %></td>
+                <td><%= post.convert_time %></td>
+                <td><%= post.rating %></td>
+        </tr>
+        <% end %>
+    </table>
+<% end %>
