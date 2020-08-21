@@ -31,7 +31,7 @@
             <option value="1">1 (lowest)</option>
         </select>
     <br>
-    <input type="hidden" id="time" name="post[created_at]" value="<%=Time.new.strftime("%A, %B %d, %Y at%l:%M%p")%>">
+    <input type="hidden" id="time" name="post[created_at]" value="<%= Time.current %>">
     <br>
     <input type="submit" value="Create Review">
 <form>
