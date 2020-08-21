@@ -14,7 +14,7 @@ main {
   justify-content: center;
   align-items: center;
   display: flex;
-  background-color: #FBFFF4;
+  background-color: #f4fbff;
   width: 100%;
   height: 100%;
   flex-flow: column wrap;
@@ -63,7 +63,7 @@ th {
 }
 
 td {
-  background-color: #fffbf0;
+  background-color: #FBFFF4;
   text-align: center;
 }
 
@@ -75,12 +75,21 @@ td.form-label {
 
 td.form-value {
   text-align: left;
-  background-color: #fffbf0;
+  background-color: #FBFFF4;
+}
+
+td.my-page-subheading {
+  text-align: center;
+  background-color: #f0f5e9;
 }
 
 td.show-review {
   text-align: justify;
   border: none;
+}
+
+td.rev-content {
+  text-align: left;
 }
 
 td.show-content {
@@ -121,6 +130,20 @@ table.sort {
   border: none;
 }
 
+input { 
+  text-align: left;
+  background-color: #FBFFF4;
+}
+
+textarea {
+  text-align: left;
+  background-color: #FBFFF4;
+}
+
+select {
+  background-color: #FBFFF4;
+}
+
 a:link {
   color: #385257;
 }
@@ -131,18 +154,6 @@ a:visited {
 
 a:hover {
   color: #65939c;
-}
-
-input { 
-  text-align: left;
-}
-
-textarea {
-  text-align: left;
-}
-
-td.rev-content {
-  text-align: left;
 }
 
 .alert {
@@ -164,7 +175,7 @@ td.rev-content {
 .item {
   height: 100%;
   width: 100%;
-  background-color: #FBFFF4;
+  background-color: #f4fffc;
 }
 
 h2 {

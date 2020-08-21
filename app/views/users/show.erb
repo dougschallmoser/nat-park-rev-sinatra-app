@@ -28,10 +28,10 @@
             </th>
         </tr>
         <tr>
-                <td><a href="../posts/<%= post.id %>"><%= post.capitalize_title %></td>
-                <td><a href="../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
-                <td><%= post.convert_time %></td>
-                <td><%= post.rating %>/5</td>
+                <td class="my-page-subheading"><a href="../posts/<%= post.id %>"><%= post.capitalize_title %></td>
+                <td class="my-page-subheading"><a href="../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
+                <td class="my-page-subheading"><%= post.convert_time %></td>
+                <td class="my-page-subheading"><%= post.rating %>/5</td>
         </tr>
         <tr>
                 <td class="show-content" colspan="6"><%= post.content %></td>
