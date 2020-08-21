@@ -134,6 +134,10 @@ textarea {
   text-align: left;
 }
 
+td.rev-content {
+  text-align: left;
+}
+
 .alert {
   color: red;
 }
@@ -148,10 +152,6 @@ textarea {
   width: 100vw;
   height: 100vh;
   flex-direction: column;
-}
-
-td.rev-content {
-  text-align: left;
 }
 
 .item {
