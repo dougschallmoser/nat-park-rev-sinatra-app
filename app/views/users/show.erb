@@ -1,5 +1,4 @@
-<br>
-  <span class="alert">
+<span class="alert">
     <%= flash[:message] %>
     <%= flash[:logged_in] %>
     <%= flash[:permission] %>
@@ -31,10 +30,10 @@
                 <td><a href="../posts/<%= post.id %>"><%= post.title %></td>
                 <td><a href="../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
                 <td><%= post.convert_time %></td>
-                <td><%= post.rating %></td>
+                <td><%= post.rating %>/5</td>
         </tr>
         <tr>
-                <td class="rev-content" colspan="6"><%= post.content %></td>
+                <td class="show-content" colspan="6"><%= post.content %></td>
         </tr>
     <% end %>
 </table>

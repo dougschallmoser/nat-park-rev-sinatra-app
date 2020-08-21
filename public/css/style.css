@@ -83,6 +83,12 @@ td.show-review {
   border: none;
 }
 
+td.show-content {
+  text-align: justify;
+  border: none;
+  font-weight: 300;
+}
+
 table.login {
   margin: auto;
   border-spacing: 0px;
@@ -188,6 +194,7 @@ h5 {
 * {
   font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
   text-align: center;
 }
