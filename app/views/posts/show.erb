@@ -1,12 +1,17 @@
 <br>
 <h2>Review</h2>
 <table class="data">
-    <tr><h3>"<%= @post.title %>"</h3></tr>
-    <tr><h3><a href="/parks/<%= @post.park.slug %>"><%= @post.park.name %> National Park</a></h3></tr>
-    <tr><%= @post.created_at %></tr>
-    <br>
-    <br>
-    <tr>Rating: <%= @post.rating %>/5</tr>
-    <br>
-    <tr><%= @post.content %></tr>
+    <tr>
+        <th><h3>"<%= @post.title %>"</h3></th>
+    </tr>
+    <tr>
+        <td class="show-review"><h4>Created by: <%= @post.user.username %></h4>
+        <br><h4><a href="/parks/<%= @post.park.slug %>"><%= @post.park.name %> National Park</a></h4>
+        <br><h4><%= @post.created_at %></h4>
+        <br><h4>Rating: <%= @post.rating %> out of 5</h4>
+        </td>
+    </tr>
+    <tr>
+        <td class="show-review"><%= @post.content %></td>
+    </tr>
 </table>

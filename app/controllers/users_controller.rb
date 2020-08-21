@@ -45,7 +45,6 @@ class UsersController < ApplicationController
 
     post '/login' do 
         login(params[:username], params[:password])
-        redirect "/users/#{current_user.slug}"
     end
 
     get '/logout' do 

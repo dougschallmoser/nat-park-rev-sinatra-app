@@ -20,7 +20,7 @@
             <th rowspan="2">
                 <form method="POST" action="/posts/<%= post.id %>">
                     <input type="hidden" id="hidden" name="_method" value="delete">
-                    <input type="submit" value="Delete">
+                    <input type="submit" value="Delete" onclick="return confirm('Are you sure?')">
                 </form>
             </th>
         </tr>

@@ -1,5 +1,8 @@
+require 'rack-flash'
 
 class ApplicationController < Sinatra::Base
+
+    use Rack::Flash
 
     configure do 
         enable :sessions
@@ -25,8 +28,10 @@ class ApplicationController < Sinatra::Base
             user = User.find_by(:username => username)
             if user && user.authenticate(password)
                 session[:username] = user.username 
+                redirect "/users/#{current_user.slug}"
             else 
-                redirect "/login"
+                flash[:credential_error] = "Invalid credentials. Please try again."
+                erb :"users/login"
             end
         end
 

@@ -67,6 +67,22 @@ td {
   text-align: center;
 }
 
+td.form-label {
+  text-align: right;
+  background-color: #DAEEEF;
+  height: 5%;
+}
+
+td.form-value {
+  text-align: left;
+  background-color: #FBFFF4;
+}
+
+td.show-review {
+  text-align: justify;
+  border: none;
+}
+
 table.login {
   margin: auto;
   border-spacing: 0px;
@@ -98,16 +114,6 @@ table.sort {
   border: none;
 }
 
-td.form-label {
-  text-align: right;
-  background-color: #DAEEEF;
-  height: 5%;
-}
-
-td.form-value {
-  text-align: left;
-  background-color: #FBFFF4;
-}
 
 a:link {
   color: #385257;
@@ -159,6 +165,13 @@ h2 {
 h3 {
   font-size: 22px;
   text-align: center;
+}
+
+h4 {
+  font-size: 18px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 * {
