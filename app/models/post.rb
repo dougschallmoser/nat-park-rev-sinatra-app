@@ -6,6 +6,8 @@ class Post < ActiveRecord::Base
     validates :title, :presence => true 
     validates :content, :presence => true 
     validates :rating, :presence => true 
+    validates :user_id, :presence => true 
+    validates :park_id, :presence => true 
 
     def self.find_by_slug(slug_name)
         self.all.detect {|post| post.park.slug == slug_name}
