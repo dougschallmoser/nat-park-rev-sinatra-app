@@ -1,45 +1,46 @@
+<br>
 <h2>All Reviews</h2>
-
 <br>
 
 <table class="sort">
-<tr>
-        <th>Filter By Park:</td>
-        <td>
-                <select onChange="window.location.href=this.value">
-                        <option value="none" selected disabled hidden>none</option>
-                        <% @parks.each do |park| %>
-                                <option value="/parks/<%= park.slug %>"><%= park.name %></option>
-                        <% end %>
-                </select>
-        </td>
-        <th>Filter By State:</td>
-        <td>
-                <select onChange="window.location.href=this.value">
-                        <option value="" selected disabled hidden>none</option>
-                        <% @unique_states.sort.each do |state| %>
-                                <option value="/states/<%= state.downcase.strip.gsub(' ', '-') %>"><%= state %></option>
-                        <% end %>
-                </select>
-        </td>
-</tr>
+  <tr>
+    <th>Filter By Park:</th>
+      <td>
+        <select onChange="window.location.href=this.value">
+          <option value="none" selected disabled hidden>none</option>
+          <% @parks.each do |park| %>
+            <option value="/parks/<%= park.slug %>"><%= park.name %></option>
+          <% end %>
+        </select>
+      </td>
+    <th>Filter By State:</th>
+      <td>
+        <select onChange="window.location.href=this.value">
+          <option value="" selected disabled hidden>none</option>
+          <% @unique_states.sort.each do |state| %>
+            <option value="/states/<%= state.downcase.strip.gsub(' ', '-') %>"><%= state %></option>
+          <% end %>
+        </select>
+      </td>
+  </tr>
 </table>
 
 <br>
 
 <table class="data">
+  <tr>
+    <th>Title</th>
+    <th>Park Name</th>
+    <th>Created</th>
+    <th>Rating</th>
+  </tr>
+
+  <% @posts.order(:created_at => :desc).each do |post| %>
     <tr>
-        <th>Title</th>
-        <th>Park Name</th>
-        <th>Created</th>
-        <th>Rating</th>
+      <td><a href="posts/<%= post.id %>"><%= post.title %></td>
+      <td><a href="parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
+      <td><%= post.convert_time %></td>
+      <td><%= post.rating %>/5</td>
     </tr>
-            <% @posts.order(:created_at => :desc).each do |post| %>
-                        <tr>
-                        <td><a href="posts/<%= post.id %>"><%= post.title %></td>
-                        <td><a href="parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
-                        <td><%= post.convert_time %></td>
-                        <td><%= post.rating %>/5</td>
-                        </tr>
-                <% end %>
+  <% end %>
 </table>
