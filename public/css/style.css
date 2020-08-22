@@ -31,19 +31,26 @@ footer {
 nav {
   font-size: 18px;
   align-items: left;
+  color: #f2e0bd;
 }
 
-nav a {
+nav a:link {
   justify-content: center;
   align-items: center;
   text-decoration: none;
   text-align: left;
   font-size: 22px;
+  color: #f2e0bd;
+}
+
+nav a:visited {
+  color: #f2e0bd;
 }
 
 nav a:hover {
   font-size: 24px;
   text-decoration: none;
+  color: #fff2d9;
 }
 
 table {
@@ -60,29 +67,34 @@ th, td {
 
 th {
   background-color: #877960;
-  color: black;
+  color: #fff2d9;
   text-align: center;
 }
 
 td {
-  background-color: #e6d9c1;
+  background-color: #fff0d1;
   text-align: center;
 }
 
 td.form-label {
   text-align: right;
   background-color: #877960;
+  color: #fff2d9;
   height: 5%;
+}
+
+td.form-label label {
+  color: #fff2d9;
 }
 
 td.form-value {
   text-align: left;
-  background-color: #f0f5e9;
+  background-color: #f2e0bd;
 }
 
 td.my-page-subheading {
   text-align: center;
-  background-color: #f0f5e9;
+  background-color: #f2e0bd;
 }
 
 td.show-review {
@@ -134,16 +146,16 @@ table.sort {
 
 input { 
   text-align: left;
-  background-color: #FBFFF4;
+  background-color: #fff0d1;
 }
 
 textarea {
   text-align: left;
-  background-color: #FBFFF4;
+  background-color: #fff0d1;
 }
 
 select {
-  background-color: #FBFFF4;
+  background-color: #fff0d1;
 }
 
 img {
@@ -153,15 +165,15 @@ img {
 }
 
 a:link {
-  color: #f2e0bd;
+  color: #46693c;
 }
  
 a:visited {
-  color: #f2e0bd;
+  color: #46693c;
 }
 
 a:hover {
-  color: #fff2d9;
+  color: #877960;
 }
 
 .alert {
@@ -222,4 +234,5 @@ h5 {
   font-weight: 500;
   line-height: 1.5;
   text-align: center;
+  color: #46693c;
 }
