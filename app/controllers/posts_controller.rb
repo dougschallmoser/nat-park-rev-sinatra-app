@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     get '/posts' do 
         @posts = Post.all
         @parks = Park.all
-        @all_instances_of_state_names = @posts.collect {|post| post.park.state}       
+        @state_names = @posts.collect {|post| post.park.state}       
         erb :"posts/index"
     end 
     

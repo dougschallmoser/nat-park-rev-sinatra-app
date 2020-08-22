@@ -56,7 +56,6 @@ nav a:hover {
 table {
   border-spacing: 0px;
   border: 1px solid black;
-  width: 80%;
 }
 
 th, td {
@@ -97,21 +96,6 @@ td.my-page-subheading {
   background-color: #f2e0bd;
 }
 
-table.park-rating {
-  border-collapse: collapse; 
-  margin: auto;
-  width: 25%;
-  height: auto;
-  border: none;
-}
-
-table.list-park-names {
-  border-collapse: collapse; 
-  margin: auto;
-  width: 80%;
-  height: auto;
-  border: none;
-}
 
 td.show-review {
   text-align: justify;
@@ -127,6 +111,21 @@ td.show-content {
   border: none;
   font-weight: 300;
   padding: 12px;
+}
+
+table.park-rating {
+  border-collapse: collapse; 
+  margin: auto;
+  width: 25%;
+  height: auto;
+  border: none;
+}
+
+table.list-park-names {
+  border-collapse: collapse; 
+  margin: auto;
+  height: auto;
+  border: none;
 }
 
 table.login {
