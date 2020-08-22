@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_22_210547) do
-
-  create_table "characteristics", force: :cascade do |t|
-    t.string "name"
-    t.integer "post_id"
-  end
+ActiveRecord::Schema.define(version: 2020_08_17_235745) do
 
   create_table "parks", force: :cascade do |t|
     t.string "name"

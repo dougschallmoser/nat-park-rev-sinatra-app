@@ -102,8 +102,9 @@ characteristics = [
     {name: "Family-friendly"},
     {name: "Saw wildlife"},
     {name: "Camping"},
-    {name: "Crowds"},
-    {name: "Saw wildlife"},
+    {name: "Crowded"},
+    {name: "Special gear recommended"},
+    {name: "Unique experience"},
 ]
 
 Characteristic.create(characteristics)
