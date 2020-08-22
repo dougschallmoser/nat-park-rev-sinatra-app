@@ -11,10 +11,11 @@
         <th class="show-post-title">"<%= @post.capitalize_title %>"</th>
     </tr>
     <tr>
-        <td class="show-review"><h4>Created by: <span class="redText"><%= @post.user.username %></span></h4>
-        <br><h4><a href="/parks/<%= @post.park.slug %>"><%= @post.park.name %> National Park</a></h4>
-        <br><h4><%= @post.created_at.strftime("%B %d, %Y at %I:%M %p") %></h4>
-        <br><h4>Rating: <%= @post.rating %> out of 5</h4>
+        <td class="show-review">
+            <br><a href="/parks/<%= @post.park.slug %>"><%= @post.park.name %> National Park</a>
+            <br><%= @post.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+            <br>Rating: <%= @post.rating %> out of 5
+            <br>Created by: <span class="redText"><%= @post.user.username %></span>
         </td>
     </tr>
     <tr>
