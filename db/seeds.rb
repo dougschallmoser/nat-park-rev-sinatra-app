@@ -26,9 +26,7 @@ beautiful_places = Post.create(:title => "One of the most beautiful places", :co
 
 go_early = Post.create(:title => "Go early", :content => "Phenomenal and protected - so clean, vast and well managed, we absolutely loved the Road to the Sun and hikes we did. We did the road twice. Steep, narrow, and all that, but we were in a big pickup and did just fine. Many great places to stop and ogle. Driver needs to focus on the road... Early is best! Many many people want to hike Logan Pass, and by 7 am the parking lot was completely full with people waiting! We went on the road twice for the sunrise! Hike at Lake Mary is wonderful - but with crowds - early is better. Take water and first aid supplies and a wrap. It was windy one day, and got cloudy and temp dropped. This is simply an experience not to be missed.", :rating => "5", :created_at => "2020-08-04 12:04:09 -0700")
 
-
 shadow_yellowstone = Post.create(:title => "Shadow of Yellowstone", :content => "Yellowstone and see the Tetons on the way south. As far as I could tell there is not entrance fee station when leaving Yellowstone’s south exit to grand Tetons. There is definitely a fee station at the Teton entrance and another one at the south entrance of Yellowstone so make sure you have the right national park pass", :rating => "3", :created_at => "2020-08-05 14:04:02 -0700")
-
 
 ## Parks ##
 parks = [
@@ -97,6 +95,18 @@ parks = [
 ]
 
 Park.create(parks)
+
+## Characteristics ##
+
+characteristics = [
+    {name: "Family-friendly"},
+    {name: "Saw wildlife"},
+    {name: "Camping"},
+    {name: "Crowds"},
+    {name: "Saw wildlife"},
+]
+
+Characteristic.create(characteristics)
 
 ## Associations ##
 so_many_animals.user = doug 

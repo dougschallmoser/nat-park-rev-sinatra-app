@@ -8,6 +8,7 @@ header {
   background-color: #46693c;
   position: fixed;
   height: 40px;
+  line-height: 40px;
   width: 100%;
 }
 
@@ -230,6 +231,16 @@ a:hover {
   font-family: 'Lato', sans-serif;
   color: #f2e0bd;
   white-space: pre;
+}
+
+#nav-logo {
+  font-family: 'Lato', sans-serif;
+  color: #fcdb97;
+  white-space: pre;
+}
+
+#nav-logo:hover {
+  color: #fff2d9;
 }
 
 h2 {

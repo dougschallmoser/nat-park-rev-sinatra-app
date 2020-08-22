@@ -55,7 +55,7 @@ class ApplicationController < Sinatra::Base
 
         def display_nav_logged_in
             <<-DOC
-                <span class="nav-text"><a href='/'>NatParkRev</a>    </span>
+                <span class="nav-text"><a id="nav-logo" href='/'>NatParkRev</a>    </span>
                 <span class="nav-text"><a href='/posts'>Reviews</a>    </span>
                 <span class="nav-text"><a href='/users/#{current_user.slug}'>My Page</a>    </span>
                 <span class="nav-text"><a href='/posts/new'>Create</a>    </span>
