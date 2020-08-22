@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     get '/posts' do 
         @posts = Post.all
         @parks = Park.all
-        @unique_states = @parks.collect{|park| park.state}.uniq
+        @all_instances_of_state_names = @posts.collect {|post| post.park.state}       
         erb :"posts/index"
     end 
     
