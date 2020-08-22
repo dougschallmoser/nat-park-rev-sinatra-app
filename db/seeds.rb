@@ -96,19 +96,6 @@ parks = [
 
 Park.create(parks)
 
-## Characteristics ##
-
-characteristics = [
-    {name: "Family-friendly"},
-    {name: "Saw wildlife"},
-    {name: "Camping"},
-    {name: "Crowded"},
-    {name: "Special gear recommended"},
-    {name: "Unique experience"},
-]
-
-Characteristic.create(characteristics)
-
 ## Associations ##
 so_many_animals.user = doug 
 so_many_animals.park = Park.find_by(:name => "Yellowstone")

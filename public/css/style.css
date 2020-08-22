@@ -261,11 +261,12 @@ a:hover {
   font-family: 'Lato', sans-serif;
   color: #fcdb97;
   white-space: pre;
+  font-size: 26px;
 }
 
 #nav-logo:hover {
   color: #fff2d9;
-  font-size: 22px;
+  font-size: 26px;
 }
 
 h2 {
@@ -286,6 +287,7 @@ h4 {
   font-size: 18px;
   font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
   text-align: center;
+  color: #46693c;
   margin: 0;
   padding: 0;
 }
