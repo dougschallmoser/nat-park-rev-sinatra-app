@@ -105,6 +105,14 @@ table.park-rating {
   border: none;
 }
 
+table.list-park-names {
+  border-collapse: collapse; 
+  margin: auto;
+  width: 80%;
+  height: auto;
+  border: none;
+}
+
 td.show-review {
   text-align: justify;
   border: none;

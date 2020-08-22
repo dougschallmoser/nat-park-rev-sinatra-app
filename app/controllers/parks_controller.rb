@@ -13,6 +13,7 @@ class ParksController < ApplicationController
         unique_states = Park.all.collect{|park| park.state}.uniq
         if unique_states.detect {|state| state.downcase.strip.gsub(' ', '-') == params[:slug]}
             @state_name = params[:slug].split("-").map(&:capitalize).join(" ")
+            @parks_in_state = Park.all.where(:state => @state_name)
             @posts = Post.find_by_slug_state(params[:slug])
             erb :"parks/show_states"
         else
