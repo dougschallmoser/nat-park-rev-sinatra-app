@@ -5,32 +5,29 @@
 <table class="sort">
   <tr>
     <th>Filter By Park:</th>
-      <td class="my-page-subheading">
-        <select onChange="window.location.href=this.value">
-          <option value="none" selected disabled hidden>none</option>
-          <% @parks.each do |park| %>
-            <option value="/parks/<%= park.slug %>">
-              <%= park.name %> <%= '(' + park.posts.size.to_s + ')' unless park.posts.empty? %>
-            </option>
-          <% end %>
-        </select>
-      </td>
+    <td class="my-page-subheading">
+      <select onChange="window.location.href=this.value">
+        <option value="none" selected disabled hidden>none</option>
+        <% @parks.each do |park| %>
+          <option value="/parks/<%= park.slug %>">
+            <%= park.name %> <%= '(' + park.posts.size.to_s + ')' unless park.posts.empty? %>
+          </option>
+        <% end %>
+      </select>
+    </td>
     <th>Filter By State:</th>
-      <td class="my-page-subheading">
-        <select onChange="window.location.href=this.value">
-          <option value="" selected disabled hidden>none</option>
-          <% @parks.group(:state).order("state ASC").each do |park| %>
-            <option value="/states/<%= park.state.downcase.strip.gsub(' ', '-') %>">
-              <%= park.state %> <%= '(' + @all_instances_of_state_names.count(park.state).to_s + ')' unless  @all_instances_of_state_names.count(park.state) == 0 %>
-            </option>
-          <% end %>
-        </select>
-      </td>
+    <td class="my-page-subheading">
+      <select onChange="window.location.href=this.value">
+        <option value="" selected disabled hidden>none</option>
+        <% @parks.group(:state).order("state ASC").each do |park| %>
+          <option value="/states/<%= park.state.downcase.strip.gsub(' ', '-') %>">
+            <%= park.state %> <%= '(' + @all_instances_of_state_names.count(park.state).to_s + ')' unless  @all_instances_of_state_names.count(park.state) == 0 %>
+          </option>
+        <% end %>
+      </select>
+    </td>
   </tr>
 </table>
-
-
-
 
 <br>
 

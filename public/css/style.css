@@ -97,6 +97,14 @@ td.my-page-subheading {
   background-color: #f2e0bd;
 }
 
+table.park-rating {
+  border-collapse: collapse; 
+  margin: auto;
+  width: 25%;
+  height: auto;
+  border: none;
+}
+
 td.show-review {
   text-align: justify;
   border: none;
