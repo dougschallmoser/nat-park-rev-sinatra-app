@@ -8,6 +8,8 @@
 <h2>My Page</h2>
 <br>
 
+<span class="alert"><%= 'You currently have no reviews to display.' if @user.posts.empty? %></span>
+
 <table class="data">
     <% @user.posts.order(:created_at => :desc).each do |post| %>
         <tr>
@@ -38,5 +40,5 @@
         </tr>
     <% end %>
 </table>
-
-<span class="alert"><%= 'You currently have no reviews to display.' if @user.posts.empty? %><span>
+<br>
+<br>

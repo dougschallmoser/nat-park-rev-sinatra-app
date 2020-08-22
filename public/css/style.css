@@ -24,6 +24,8 @@ footer {
   background-color: #DAEEEF;
   height: 40px;
   width: 100%;
+  bottom: 0;
+  position: absolute;
 }
 
 nav {
@@ -168,14 +170,17 @@ a:hover {
 .flex-container {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
   flex-direction: column;
+  background-color: #f4fffc;
 }
 
 .item {
   height: 100%;
   width: 100%;
   background-color: #f4fffc;
+  padding-bottom: 40px;
 }
 
 h2 {
@@ -198,6 +203,7 @@ h4 {
 h5 {
   font-size: 14px;
   display: inline;
+  font-weight: 300;
   text-align: center;
   margin: 0;
   padding: 0;
