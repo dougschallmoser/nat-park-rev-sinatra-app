@@ -6,7 +6,7 @@ body {
 
 header {
   background-color: #46693c;
-  
+  position: fixed;
   height: 40px;
   width: 100%;
 }
@@ -23,11 +23,12 @@ main {
 
 footer {
   background-color: #46693c;
+  position: fixed;
   font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
   height: 40px;
+  line-height: 40px;
   width: 100%;
   bottom: 0;
-  position: absolute;
 }
 
 nav {
@@ -212,6 +213,7 @@ a:hover {
 }
 
 .item {
+  margin-top: 40px;
   height: 100%;
   width: 100%;
   background-color: #fff2d9;
@@ -257,7 +259,6 @@ h5 {
 }
 
 * {
-  /* font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif; */
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
