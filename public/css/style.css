@@ -64,19 +64,20 @@ table {
 th, td {
   text-align: center;
   border: 1px solid black;
-  padding: 2px;
+  padding: 3px;
 }
 
 th {
   background-color: #877960;
   color: #fff2d9;
-  text-align: center;
-  padding: 2px;
 }
 
 td {
   background-color: #fff0d1;
-  text-align: center;
+}
+
+th.show-post-title {
+  font-size: 22px;
 }
 
 td.form-label {
@@ -99,7 +100,6 @@ td.my-page-subheading {
   text-align: center;
   background-color: #f2e0bd;
 }
-
 
 td.show-review {
   text-align: justify;
@@ -239,6 +239,7 @@ h2 {
 }
 
 h3 {
+  color: #46693c;
   font-size: 22px;
   text-align: center;
   font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
