@@ -55,21 +55,21 @@ class ApplicationController < Sinatra::Base
 
         def display_nav_logged_in
             <<-DOC
-                <a href='/'>NatParkRev</a> |
-                <a href='/posts'>Reviews</a> |
-                <a href='/users/#{current_user.slug}'>My Page</a> |
-                <a href='/posts/new'>Create</a> |
-                <a href='/logout'>Logout</a> |
-                <h5>You are logged in as: <span class="redText">#{current_user.username}</span></h5>
+                <span class="nav-text"><a href='/'>NatParkRev</a>    </span>
+                <span class="nav-text"><a href='/posts'>Reviews</a>    </span>
+                <span class="nav-text"><a href='/users/#{current_user.slug}'>My Page</a>    </span>
+                <span class="nav-text"><a href='/posts/new'>Create</a>    </span>
+                <span class="nav-text"><a href='/logout'>Logout</a>    </span>
+                <h5>You are logged in as: <span class="redText">#{current_user.username}</h5>
             DOC
         end
 
         def display_nav_not_logged_in
             <<-DOC
-                <a href='/'>NatParkRev</a> |
-                <a href='/posts'>Reviews</a> |
-                <a href='/signup'>Sign Up</a> |
-                <a href='/login'>Login</a>
+                <span class="nav-text"><a href='/'>NatParkRev</a>    </span>
+                <span class="nav-text"><a href='/posts'>Reviews</a>    </span>
+                <span class="nav-text"><a href='/signup'>Sign Up</a>    </span>
+                <span class="nav-text"><a href='/login'>Login</a>    </span>
             DOC
         end
 

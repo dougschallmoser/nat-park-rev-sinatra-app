@@ -6,6 +6,7 @@ body {
 
 header {
   background-color: #46693c;
+  
   height: 40px;
   width: 100%;
 }
@@ -22,6 +23,7 @@ main {
 
 footer {
   background-color: #46693c;
+  font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
   height: 40px;
   width: 100%;
   bottom: 0;
@@ -214,20 +216,30 @@ a:hover {
   width: 100%;
   background-color: #fff2d9;
   padding-bottom: 40px;
+  font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
+}
+
+.nav-text {
+  font-family: 'Lato', sans-serif;
+  color: #f2e0bd;
+  white-space: pre;
 }
 
 h2 {
   font-size: 30px;
   text-align: center;
+  font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
 }
 
 h3 {
   font-size: 22px;
   text-align: center;
+  font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
 }
 
 h4 {
   font-size: 18px;
+  font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -235,6 +247,7 @@ h4 {
 
 h5 {
   font-size: 14px;
+  font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
   display: inline;
   font-weight: 300;
   text-align: center;
@@ -244,7 +257,7 @@ h5 {
 }
 
 * {
-  font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
+  /* font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif; */
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
