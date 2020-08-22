@@ -64,13 +64,14 @@ table {
 th, td {
   text-align: center;
   border: 1px solid black;
-  padding: 8px;
+  padding: 2px;
 }
 
 th {
   background-color: #877960;
   color: #fff2d9;
   text-align: center;
+  padding: 2px;
 }
 
 td {
@@ -113,7 +114,7 @@ td.show-content {
   text-align: justify;
   border: none;
   font-weight: 300;
-  padding: 12px;
+  padding: 14px;
 }
 
 table.park-rating {
@@ -136,7 +137,6 @@ table.login {
   border-spacing: 0px;
   border: none;
   height: 10%;
-  width: 20%;
 }
 
 table.signup {
@@ -144,7 +144,6 @@ table.signup {
   border-spacing: 0px;
   border: none;
   height: 20%;
-  width: 25%;
 }
 
 table.data {
@@ -263,5 +262,4 @@ h5 {
   font-weight: 500;
   line-height: 1.5;
   text-align: center;
-  color: #46693c;
 }
