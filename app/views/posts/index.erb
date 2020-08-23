@@ -5,7 +5,7 @@
   <tr>
     <th>Filter By Park:</th>
     <td class="my-page-subheading">
-      <select onChange="window.location.href=this.value">
+      <select onChange="window.location.href=this.value" id="parks-states">
         <option value="none" selected disabled hidden></option>
         <% @parks.each do |park| %>
           <option value="/parks/<%= park.slug %>">
@@ -16,7 +16,7 @@
     </td>
     <th>Filter By State:</th>
     <td class="my-page-subheading">
-      <select onChange="window.location.href=this.value">
+      <select onChange="window.location.href=this.value" id="parks-states">
         <option value="" selected disabled hidden></option>
         <% @parks.group(:state).order("state ASC").each do |park| %>
           <option value="/states/<%= park.state.downcase.strip.gsub(' ', '-') %>">

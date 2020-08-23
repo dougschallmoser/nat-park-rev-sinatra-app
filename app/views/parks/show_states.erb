@@ -5,7 +5,7 @@
 <table class="list-park-names">
     <tr>
         <th>National Park(s):</th>
-        <td>
+        <td class="my-page-subheading">
             <% @parks_in_state.each do |park| %>
                 <a href="../../parks/<%= park.slug %>"><%= park.name %></a><%= ',' unless park == @parks_in_state.last %>
             <% end %>
