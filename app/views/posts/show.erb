@@ -12,7 +12,7 @@
     </tr>
     <tr>
         <td class="show-review">
-            <br><a href="/parks/<%= @post.park.slug %>"><%= @post.park.name %> National Park</a>
+            <a href="/parks/<%= @post.park.slug %>"><%= @post.park.name %> National Park</a>
             <br><%= @post.created_at.strftime("%B %d, %Y at %I:%M %p") %>
             <br>Rating: <%= @post.rating %> out of 5
             <br>Created by: <span class="redText"><%= @post.user.username %></span>

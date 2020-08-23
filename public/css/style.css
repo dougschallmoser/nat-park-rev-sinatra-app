@@ -131,7 +131,7 @@ td.my-page-subheading {
 
 td.show-review {
   text-align: center;
-  border: none;
+  /* border-right: 1px solid black; */
   color: black;
 }
 
@@ -141,7 +141,7 @@ td.rev-content {
 
 td.show-content {
   text-align: justify;
-  border: none;
+  /* border-right: 1px solid black; */
   font-size: 14px;
   font-weight: 300;
   padding: 14px;
@@ -150,7 +150,7 @@ td.show-content {
 
 td.show-review-content {
   text-align: justify;
-  border: none;
+  /* border-right: 1px solid black; */
   font-size: 20px;
   line-height: 1.7;
   font-weight: 300;
@@ -159,7 +159,7 @@ td.show-review-content {
 }
 
 table.park-rating {
-  border-collapse: collapse; 
+  border-collapse: separate;
   margin: auto;
   width: 25%;
   height: auto;
@@ -167,7 +167,7 @@ table.park-rating {
 }
 
 table.list-park-names {
-  border-collapse: collapse; 
+  border-collapse: separate;
   margin: auto;
   height: auto;
   border: none;
@@ -178,7 +178,10 @@ table.login {
   border-spacing: 0px;
   border: none;
   background-color: transparent;
-  
+}
+
+table.login tr td {
+  border: none;
 }
 
 table.signup {
@@ -186,6 +189,10 @@ table.signup {
   border-spacing: 0px;
   border: none;
   height: 20%;
+}
+
+table.signup tr td {
+  border: none;
 }
 
 table.data {
@@ -203,14 +210,20 @@ table.sort {
   border: none;
 }
 
+table.park-rating tr th:first-child,
+table.list-park-names tr th:first-child,
 table.sort tr th:first-child {
   border-bottom-left-radius: 7px;
 }
 
+table.park-rating tr td:last-child,
+table.list-park-names tr td:last-child,
 table.sort tr td:last-child {
   border-top-right-radius: 7px;
 }
 
+table.park-rating tr td,
+table.list-park-names tr td,
 table.sort tr td {
   border-top: 1px solid black;
 }
