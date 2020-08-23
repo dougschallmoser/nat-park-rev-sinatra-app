@@ -10,7 +10,7 @@ class ParksController < ApplicationController
     end
 
     get '/states/:slug' do 
-        unique_states = Park.all.collect{|park| park.state}.uniq
+        unique_states = Park.distinct.pluck(:state)
         if unique_states.detect {|state| state.downcase.strip.gsub(' ', '-') == params[:slug]}
             @state_name = params[:slug].split("-").map(&:capitalize).join(" ")
             @parks_in_state = Park.all.where(:state => @state_name)

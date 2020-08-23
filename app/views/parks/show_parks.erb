@@ -10,11 +10,7 @@
         <tr>
             <th>Avg. Park Rating:</th>
             <td class="my-page-subheading">
-                <% total = 0 %>
-                <% @park.posts.each do |post| %>
-                    <% total += post.rating %>
-                <% end %>
-                <%= (total.to_f / @park.posts.size).round(1).to_s + ' out of 5' %>
+                <%= (@park.posts.sum(:rating).to_f / @park.posts.size).round(1).to_s + ' out of 5' %>
             </td>
         </tr>
     </table>
