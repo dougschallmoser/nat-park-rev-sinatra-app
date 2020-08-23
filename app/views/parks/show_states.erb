@@ -22,6 +22,7 @@
         <tr>
             <th>Title</th>
             <th>Park Name</th>
+            <th>Author</th>
             <th>Created</th>
             <th>Rating</th>
         </tr>
@@ -29,6 +30,7 @@
         <tr>
                 <td><a href="../../posts/<%= post.id %>"><%= post.capitalize_title %></a></td>
                 <td><a href="../../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
+                <td><%= post.user.username %></td>
                 <td><%= post.convert_time %></td>
                 <td><%= post.rating %>/5</td>
         </tr>
