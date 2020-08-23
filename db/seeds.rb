@@ -7,6 +7,8 @@ skittles = User.create(:name => "Skittles", :username => "skittles123", :email =
 
 erin = User.create(:name => "Erin", :username => "branzell", :email => "erin@aol.com", :password => "brass")
 
+razor83 = User.create(:name => "Rachel", :username => "razor83", :email => "razor83@aol.com", :password => "blade")
+
 ## Posts ##
 so_many_animals = Post.create(:title => "So Many Animals", :content => "I would definitely suggest doing lots of research before coming to make sure you know where you want to go and what you want to see while in Yellowstone. The park is huge! And there is a lot to see and do. We drove through in one day and saw some highlights but probably could have done more. It can be tricky driving through there, so make sure you are prepared for the winding roads and hills. We did see Old Faithful, it was cool but there were really too many people around to feel safe during covid. The views are unmatched though, highly recommend the park overall!", :rating => "4", :created_at => "2020-08-16 15:42:48 -0700")
 
@@ -27,6 +29,10 @@ beautiful_places = Post.create(:title => "One of the most beautiful places", :co
 go_early = Post.create(:title => "Go early", :content => "Phenomenal and protected - so clean, vast and well managed, we absolutely loved the Road to the Sun and hikes we did. We did the road twice. Steep, narrow, and all that, but we were in a big pickup and did just fine. Many great places to stop and ogle. Driver needs to focus on the road... Early is best! Many many people want to hike Logan Pass, and by 7 am the parking lot was completely full with people waiting! We went on the road twice for the sunrise! Hike at Lake Mary is wonderful - but with crowds - early is better. Take water and first aid supplies and a wrap. It was windy one day, and got cloudy and temp dropped. This is simply an experience not to be missed.", :rating => "5", :created_at => "2020-08-04 12:04:09 -0700")
 
 shadow_yellowstone = Post.create(:title => "Shadow of Yellowstone", :content => "Yellowstone and see the Tetons on the way south. As far as I could tell there is not entrance fee station when leaving Yellowstone’s south exit to grand Tetons. There is definitely a fee station at the Teton entrance and another one at the south entrance of Yellowstone so make sure you have the right national park pass", :rating => "3", :created_at => "2020-08-05 14:04:02 -0700")
+
+denied_entry = Post.create(:title => "Denied entry to a national park is unpatriotic!", :content => "I drove 345 miles to go to the Rocky Mountains on August 6 and 7th. I had a timed pass, but didn't arrive at the time of my pass. At 5pm, my kids and I were allowed to enter, but it started raining so we had to leave. Before we left I asked if there was an overlook area (since we couldn't hike in the rain) , and the ranger didn't know of one. The next morning, I explained the situation to a ranger. She told me to come back at 5pm, despite my having a National Park Pass. We had planned to hike the Copeland Falls Trail and Alberta Falls Trail which aren't heavily trafficked trails. The park is 415 miles with a large mountain range. I can't imagine people bumping into each other, which is the reason for the 'timed entries during Coronavirus'. We never saw the park. My kids and I won't be back. The Rocky Mountain National Park is being used as a political pawn. No other national park is denying entry. What a shame! Politics shouldn't prevent Americans from viewing a national treasure. How unpatriotic.", :rating => "1", :created_at => "2020-08-08 9:42:07 -0700")
+
+must_see = Post.create(:title => "Must see!", :content => "Beautiful park! So many trails to walk with beautiful views. Driving the Going to the Sun road is a treat in itself. Allow about an hour and a half to go from the far end of the park (Rising Sun) to the entrance at the end of the day. We found it was easier to find parking in the most popular destinations (Logan Pass) after 5 pm but you didn't have alot of time to hike the trails. At Hidden Lake outlook, it was worth it to continue on down towards Hidden Lake. It is a more rigorous trail and you definitely want bear spray and drinking water. The park is definitely a must see.", :rating => "5", :created_at => "2020-08-22 5:08:07 -0700")
 
 ## Parks ##
 parks = [
@@ -97,6 +103,7 @@ parks = [
 Park.create(parks)
 
 ## Associations ##
+
 so_many_animals.user = doug 
 so_many_animals.park = Park.find_by(:name => "Yellowstone")
 so_many_animals.save
@@ -130,9 +137,17 @@ beautiful_places.park = Park.find_by(:name => "Zion")
 beautiful_places.save 
 
 go_early.user = skittles 
-go_early.park = Park.find_by(name: "Zion")
+go_early.park = Park.find_by(:name => "Zion")
 go_early.save
 
 shadow_yellowstone.user = doug
-shadow_yellowstone.park = Park.find_by(name: "Yellowstone")
+shadow_yellowstone.park = Park.find_by(:name => "Yellowstone")
 shadow_yellowstone.save
+
+denied_entry.user = razor83 
+denied_entry.park = Park.find_by(:name => "Rocky Mountain")
+denied_entry.save
+
+must_see.user = skittles 
+must_see.park = Park.find_by(:name => "Glacier")
+must_see.save
