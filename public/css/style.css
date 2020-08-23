@@ -49,8 +49,9 @@ nav a:link {
   align-items: center;
   text-decoration: none;
   text-align: left;
-  font-size: 22px;
+  font-size: 20px;
   color: #f2e0bd;
+  transition: color 0.5s, font-size 0.5s;
 }
 
 nav a:visited {
@@ -60,7 +61,7 @@ nav a:visited {
 nav a:hover {
   font-size: 24px;
   text-decoration: none;
-  color: #fff2d9;
+  color: #fcdb97;
 }
 
 table {
@@ -173,15 +174,40 @@ table.sort {
 input { 
   text-align: left;
   background-color: #fff0d1;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow:0 0 10px 2px rgba(0,0,0,0.07);
+}
+
+input#title {
+  text-align: center;
+  box-shadow:0 0 10px 2px rgba(0,0,0,0.07);
+}
+
+input[type="submit"] {
+  background-color: #f2e0bd;
+  padding: 5px;
+  border-radius:5px;
+  color: #46693c;
 }
 
 textarea {
   text-align: left;
   background-color: #fff0d1;
+  border-radius: 10px;
+  resize: none;
+  padding: 10px;
+  box-shadow:0 0 10px 2px rgba(0,0,0,0.07);
 }
 
 select {
   background-color: #fff0d1;
+  border-radius: 10px;
+  box-shadow:0 0 10px 2px rgba(0,0,0,0.07);
+}
+
+select#rating {
+  width: 15%;
 }
 
 img {
@@ -190,6 +216,14 @@ img {
   border: 1px solid #877960;
   border-left: 0;
   border-right: 0;
+  opacity: 0.15;
+  transition: opacity 1.5s ease-in-out;
+  -moz-transition: opacity 1.5s ease-in-out;
+  -webkit-transition: opacity 1.5s ease-in-out;
+}
+
+img:hover {
+  opacity: 1;
 }
 
 a:link {
@@ -216,6 +250,11 @@ a:hover {
 
 .redText {
   color: red;
+  font-size: 14px;
+}
+
+.orangeText {
+  color: #fcdb97;
   font-size: 14px;
 }
 
@@ -249,6 +288,7 @@ a:hover {
   white-space: pre;
   position: relative;
   line-height: 42px;
+  text-shadow: 2px 2px rgba(0,0,0,0.07);
 }
 
 .nav-text-logo {
@@ -262,11 +302,24 @@ a:hover {
   color: #fcdb97;
   white-space: pre;
   font-size: 26px;
+  transition: color 1.25s;
+  text-shadow: 2px 2px rgba(0,0,0,0.07);
 }
 
 #nav-logo:hover {
-  color: #fff2d9;
+  color: #ffc857;
   font-size: 26px;
+}
+
+#github {
+  color: #f2e0bd;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+#github:hover {
+  color: #fff2d9;
+  font-size: 14px;
 }
 
 h2 {

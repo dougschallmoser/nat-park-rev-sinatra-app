@@ -16,7 +16,6 @@ class PostsController < ApplicationController
     
     post '/posts' do
         redirect_if_not_logged_in
-        binding.pry
         post = Post.new(params[:post])
         post.user = current_user
         if post.save

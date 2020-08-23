@@ -60,7 +60,7 @@ class ApplicationController < Sinatra::Base
                 <span class="nav-text"><a href='/users/#{current_user.slug}'>My Page</a>    </span>
                 <span class="nav-text"><a href='/posts/new'>Create</a>    </span>
                 <span class="nav-text"><a href='/logout'>Logout</a>    </span>
-                <span class="nav-user"><h5>You are logged in as: <span class="redText">#{current_user.username}</h5></span>
+                <span class="nav-user"><h5>You are logged in as: <span class="orangeText">#{current_user.username}</h5></span>
             DOC
         end
 
