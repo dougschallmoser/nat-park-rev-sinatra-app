@@ -70,7 +70,7 @@ parks = [
     {name: "Hot Springs", state: "Arkansas"},
     {name: "Indiana Dunes", state: "Indiana"},
     {name: "Isle Royale", state: "Michigan"},
-    {name: "Joshau Tree", state: "California"},
+    {name: "Joshua Tree", state: "California"},
     {name: "Katmai", state: "Alaska"},
     {name: "Kenai Fjords", state: "Alaska"},
     {name: "Kings Canyon", state: "California"},

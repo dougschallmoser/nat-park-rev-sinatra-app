@@ -17,7 +17,8 @@ Specs:
     The Post resource has routes for CRUD as shown in the posts_controller file.
 - [x] Ensure that users can't modify content created by other users
     Users cannot modify content created by other users as shown in the patch '/posts/:id' route.
-- [ ] Include user input validations
+- [x] Include user input validations
+    User input validations are included as shown in the post and user models with validation of presence and uniqueness.
 - [x] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
     Validation failures are displayed to user with error messages as shown in the posts_controller and users_controller files.
 - [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
