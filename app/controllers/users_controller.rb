@@ -12,8 +12,8 @@ class UsersController < ApplicationController
     post '/signup' do 
         @user = User.new(params[:user])
         if @user.save
+            flash[:signed_up] = "You have successfully created an account."
             login(params[:user][:username], params[:user][:password])
-            redirect "/users/#{current_user.slug}"
         else 
             flash[:message] = "Username is already taken. Please try again."
             redirect "/signup"

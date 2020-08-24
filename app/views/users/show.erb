@@ -1,8 +1,9 @@
 <br>
 <span class="alert">
     <%= flash[:message] %>
-    <%= flash[:logged_in] %>
     <%= flash[:permission] %>
+    <%= flash[:signed_up] ? flash[:signed_up] : flash[:logged_in] %>
+    
 </span>
 
 <h2>My Page</h2>
