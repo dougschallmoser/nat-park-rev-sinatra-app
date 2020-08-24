@@ -21,7 +21,8 @@ Specs:
     User input validations are included as shown in the post and user models with validation of presence and uniqueness.
 - [x] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
     Validation failures are displayed to user with error messages as shown in the posts_controller and users_controller files.
-- [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+- [x] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+    The readme includes all necessary requirements as shown in the readme.md file.
 
 Confirm
 - [x] You have a large number of small Git commits
