@@ -46,10 +46,18 @@ class ApplicationController < Sinatra::Base
             if user && user.authenticate(password)
                 session[:username] = user.username 
                 flash[:logged_in] = "You have successfully logged in."
+                redirect_if_return_url_exists
                 redirect "/users/#{current_user.slug}"
             else 
                 flash[:credential_error] = "Invalid credentials. Please try again."
                 redirect "/login"
+            end
+        end
+
+        def redirect_if_return_url_exists
+            if session[:return_url]
+                redirect session[:return_url]
+                session[:return_url].clear
             end
         end
 

@@ -28,6 +28,7 @@ class PostsController < ApplicationController
     end
 
     get '/posts/:id' do 
+        session[:return_url] = request.url
         redirect_if_not_logged_in
         if @post = Post.find_by(:id => params[:id])
             erb :"posts/show"
