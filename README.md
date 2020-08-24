@@ -15,7 +15,10 @@ To run this application in your local environment, please follow these steps:
 
 ## Contributing
 
-Bug reports and pull requests are welcome on Github at https://github.com/dougschallmoser/nat-park-rev-sinatra-app. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+Bug reports and pull requests are welcome on Github at:
+https://github.com/dougschallmoser/nat-park-rev-sinatra-app.
+
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
  
 
 ## Authors
