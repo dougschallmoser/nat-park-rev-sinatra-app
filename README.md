@@ -7,10 +7,12 @@ NatParkRev is a user-generated National Park review web application. User's can 
 
 To run this application in your local environment, please follow these steps:
 
+```
 1. Clone this repository
-2. Run `bundle install`
-3. Run `shotgun`
-4. In your browser, goto `http://localhost:9393/`
+2. Run 'bundle install'
+3. Run 'shotgun'
+4. In your browser, goto http://localhost:9393/
+```
 
 
 ## Contributing
