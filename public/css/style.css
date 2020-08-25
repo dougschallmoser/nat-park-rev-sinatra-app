@@ -80,13 +80,6 @@ table tr td:first-child {
   border-left: 1px solid black;
 }
 
-th {
-  background-color: #877960;
-  font-size: 14px;
-  color: #fff2d9;
-  border-top: 1px solid black;
-}
-
 table tr:first-child th:first-child {
   border-top-left-radius: 7px;
 }
@@ -103,13 +96,20 @@ table tr:last-child td:last-child {
   border-bottom-right-radius: 7px;
 }
 
-th.show-post-title {
-  font-size: 22px;
-}
-
 td {
   background-color: #fff0d1;
   font-size: 14px;
+}
+
+th {
+  background-color: #877960;
+  font-size: 14px;
+  color: #fff2d9;
+  border-top: 1px solid black;
+}
+
+th.show-post-title {
+  font-size: 22px;
 }
 
 td.form-label {

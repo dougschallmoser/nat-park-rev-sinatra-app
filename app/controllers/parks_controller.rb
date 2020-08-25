@@ -9,12 +9,12 @@ class ParksController < ApplicationController
         end
     end
 
-    get '/states/:slug' do 
+    get '/states/:state_name' do 
         unique_states = Park.distinct.pluck(:state)
-        if unique_states.detect {|state| state.downcase.strip.gsub(' ', '-') == params[:slug]}
-            @state_name = params[:slug].split("-").map(&:capitalize).join(" ")
+        if unique_states.detect {|state| state.downcase.strip.gsub(' ', '-') == params[:state_name]}
+            @state_name = params[:state_name].split("-").map(&:capitalize).join(" ")
             @parks_in_state = Park.all.where(:state => @state_name)
-            @posts = Post.find_by_slug_state(params[:slug])
+            @posts = Post.find_by_slug_state(params[:state_name])
             erb :"parks/show_states"
         else
             erb :"posts/error"
