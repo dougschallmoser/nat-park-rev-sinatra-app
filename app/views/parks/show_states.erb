@@ -28,14 +28,15 @@
         </tr>
                 <% @posts.each do |post| %>
         <tr>
-                <td><a href="../../posts/<%= post.id %>"><%= post.capitalize_title %></a></td>
-                <td><a href="../../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
-                <td><%= post.user.username %></td>
-                <td><%= post.convert_time %></td>
-                <td><%= post.rating %>/5</td>
+                    <td><a href="../../posts/<%= post.id %>"><%= post.capitalize_title %></a></td>
+                    <td><a href="../../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
+                    <td><%= post.user.username %></td>
+                    <td><%= post.convert_time %></td>
+                    <td><%= post.rating %>/5</td>
         </tr>
-        <% end %>
+                <% end %>
     </table>
 <% end %>
+
 <br>
 <br>
