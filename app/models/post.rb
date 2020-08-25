@@ -9,10 +9,6 @@ class Post < ActiveRecord::Base
     validates :user_id, :presence => true 
     validates :park_id, :presence => true 
 
-    def self.find_by_slug(slug_name)
-        self.all.detect {|post| post.park.slug == slug_name}
-    end 
-
     def self.find_by_slug_state(slug_name)
         self.all.select {|post| post.park.slug_state == slug_name}
     end 
