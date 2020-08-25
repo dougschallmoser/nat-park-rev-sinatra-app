@@ -1,8 +1,8 @@
 
 class ParksController < ApplicationController
 
-    get '/parks/:slug' do 
-        if @park = Park.find_by_slug(params[:slug])
+    get '/parks/:park_name' do 
+        if @park = Park.find_by_slug(params[:park_name])
             erb :"parks/show_parks"
         else
             erb :"parks/error"
