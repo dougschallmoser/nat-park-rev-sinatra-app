@@ -1,8 +1,9 @@
 <h2>Create Review</h2>
+
 <form method="POST" action="/posts">
     <label for="title">Title:</label>
     <br>
-        <input type="text" id="title" name="post[title]" size="50" required="required">
+    <input type="text" id="title" name="post[title]" size="50" required="required">
     <br>
     <br>
     <label for="parks">National Park:</label>
@@ -10,14 +11,14 @@
         <select id="parks" name="post[park_id]" required>
             <option value="" selected disabled hidden>select park</option>
             <% @parks.each do |park| %>
-            <option value="<%= park.id %>"><%= park.name %></option>
+                <option value="<%= park.id %>"><%= park.name %></option>
             <% end %>
         </select>
     <br>
     <br>
     <label for="content">Content:</label>
     <br>
-        <textarea id="content" name="post[content]" placeholder="Enter your review here." rows="12" cols="80" required="required"></textarea>
+    <textarea id="content" name="post[content]" placeholder="Enter your review here." rows="12" cols="80" required="required"></textarea>
     <br>
     <br>
     <label for="rating">Rating:</label>
@@ -35,6 +36,6 @@
     <input type="hidden" id="time" name="post[created_at]" value="<%= Time.current %>">
     <br>
     <input type="submit" value="Create Review">
-<form>
+</form>
 <br>
 <br>
