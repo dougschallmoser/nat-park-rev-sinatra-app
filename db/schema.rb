@@ -21,9 +21,10 @@ ActiveRecord::Schema.define(version: 2020_08_17_213909) do
     t.string "title"
     t.string "content"
     t.integer "rating"
-    t.datetime "created_at"
     t.integer "user_id"
     t.integer "park_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
