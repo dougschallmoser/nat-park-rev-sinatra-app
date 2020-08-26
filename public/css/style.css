@@ -304,6 +304,10 @@ a:hover {
   color: red;
 }
 
+.edit-delete {
+  display: inline-block;
+}
+
 .nat-park-rev {
   color: #336742;
   font-family: 'Lato', sans-serif;
