@@ -14,7 +14,12 @@
     <tr>
         <td class="show-review">
             <a href="/parks/<%= @post.park.slug %>"><%= @post.park.name %> National Park</a>
-            <br><%= @post.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+            <% if @post.created_at != @post.updated_at %>
+                <br>Updated: <%= @post.updated_at.strftime("%B %d, %Y at %I:%M %p") %>
+                <br>Created: <%= @post.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+            <% else %>
+                <br><%= @post.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+            <% end %>
             <br>Rating: <%= @post.rating %> out of 5
             <br>Created by: <span class="redText"><%= @post.user.username %></span>
         </td>
