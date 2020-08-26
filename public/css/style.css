@@ -128,6 +128,13 @@ td.form-value {
 td.my-page-subheading {
   text-align: center;
   font-size: 14px;
+  background-color: #fff0d1;
+  padding: 2px;
+}
+
+td.my-page-heading {
+  text-align: center;
+  font-size: 14px;
   background-color: #f2e0bd;
   padding: 2px;
 }

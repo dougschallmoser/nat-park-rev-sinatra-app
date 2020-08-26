@@ -4,7 +4,7 @@
 <table class="sort">
   <tr>
     <th>Filter By Park:</th>
-    <td class="my-page-subheading">
+    <td class="my-page-heading">
       <select onChange="window.location.href=this.value" id="parks-states">
         <option value="none" selected disabled hidden></option>
         <% @parks.each do |park| %>
@@ -15,7 +15,7 @@
       </select>
     </td>
     <th>Filter By State:</th>
-    <td class="my-page-subheading">
+    <td class="my-page-heading">
       <select onChange="window.location.href=this.value" id="parks-states">
         <option value="" selected disabled hidden></option>
         <% @parks.group(:state).order("state ASC").each do |park| %>
