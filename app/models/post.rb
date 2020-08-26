@@ -26,6 +26,8 @@ class Post < ActiveRecord::Base
             "#{time / 60}" + " min ago"
         when 60..3600
             "#{time / 60}" + " mins ago"
+        when 3600..7199
+            "#{time / 3600}" + " hour ago"
         when 3600..86400
             "#{time / 3600}" + " hours ago"
         when 86400..172799

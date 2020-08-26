@@ -41,9 +41,9 @@
                     <% end %>
                 <% else %>
                     <% if (Time.current - post.updated_at).to_i < 86400 %>
-                        <span class="alert">Updated <%= post.convert_time(post.updated_at) %></span>
+                        <span class="alert">updated <%= post.convert_time(post.updated_at) %></span>
                     <% else %>
-                        Updated <%= post.convert_time(post.updated_at) %>
+                        updated <%= post.convert_time(post.updated_at) %>
                     <% end %>
                 <% end %>
                 </td>
