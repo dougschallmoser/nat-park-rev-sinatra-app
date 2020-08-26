@@ -31,7 +31,21 @@
                     <td><a href="../../posts/<%= post.id %>"><%= post.capitalize_title %></a></td>
                     <td><a href="../../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
                     <td><%= post.user.username %></td>
-                    <td><%= post.convert_time %></td>
+                    <td>
+                    <% if post.created_at == post.updated_at %>
+                        <% if (Time.current - post.created_at).to_i < 86400 %>
+                            <span class="alert"><%= post.convert_time(post.created_at) %></span>
+                        <% else %>
+                            <%= post.convert_time(post.created_at) %>
+                        <% end %>
+                    <% else %>
+                        <% if (Time.current - post.updated_at).to_i < 86400 %>
+                            <span class="alert">Updated <%= post.convert_time(post.updated_at) %></span>
+                        <% else %>
+                            Updated <%= post.convert_time(post.updated_at) %>
+                        <% end %>
+                    <% end %>
+                    </td>
                     <td><%= post.rating %>/5</td>
         </tr>
                 <% end %>

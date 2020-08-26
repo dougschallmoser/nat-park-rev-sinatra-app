@@ -11,7 +11,7 @@
 <span class="alert"><%= 'You currently have no reviews to display.' if @user.posts.empty? %></span>
 
 <table class="data">
-    <% @user.posts.order(:created_at => :desc).each do |post| %>
+    <% @user.posts.order(:updated_at => :desc).each do |post| %>
         <tr>
             <th>Title</th>
             <th>Park Name</th>
@@ -32,7 +32,21 @@
         <tr>
                 <td class="my-page-subheading"><a href="../posts/<%= post.id %>"><%= post.capitalize_title %></td>
                 <td class="my-page-subheading"><a href="../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
-                <td class="my-page-subheading"><%= post.convert_time %></td>
+                <td class="my-page-subheading">
+                <% if post.created_at == post.updated_at %>
+                    <% if (Time.current - post.created_at).to_i < 86400 %>
+                        <span class="alert"><%= post.convert_time(post.created_at) %></span>
+                    <% else %>
+                        <%= post.convert_time(post.created_at) %>
+                    <% end %>
+                <% else %>
+                    <% if (Time.current - post.updated_at).to_i < 86400 %>
+                        <span class="alert">Updated <%= post.convert_time(post.updated_at) %></span>
+                    <% else %>
+                        Updated <%= post.convert_time(post.updated_at) %>
+                    <% end %>
+                <% end %>
+                </td>
                 <td class="my-page-subheading"><%= post.rating %>/5</td>
         </tr>
         <tr>

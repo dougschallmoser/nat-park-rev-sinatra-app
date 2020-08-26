@@ -17,11 +17,13 @@ class Post < ActiveRecord::Base
         self.title.split(" ").map(&:capitalize).join(" ")
     end
 
-    def convert_time
-        time = (Time.current - self.created_at).to_i
+    def convert_time(timestamp)
+        time = (Time.current - timestamp).to_i
         case time 
         when 0..60
             "#{time}" + " secs ago"
+        when 60..119
+            "#{time / 60}" + " min ago"
         when 60..3600
             "#{time / 60}" + " mins ago"
         when 3600..86400
