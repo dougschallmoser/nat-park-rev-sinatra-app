@@ -408,6 +408,10 @@ a:hover {
   color: #ffc857;
 }
 
+.nav-user a:hover {
+  color: #fdf6e3;
+}
+
 .nav-text {
   font-family: 'Lato', sans-serif;
   color: #ffc857;
