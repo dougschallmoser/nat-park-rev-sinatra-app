@@ -60,7 +60,7 @@ class UsersController < ApplicationController
             authenticate_and_change_password(user)
         else
             flash[:permission] = "You do not have permission to edit that user's page."
-            redirect "/users/#{current_user.slug}"
+            redirect "/users/#{current_user.slug}/account"
         end
     end
     

@@ -68,12 +68,12 @@ class ApplicationController < Sinatra::Base
                     user.password = params[:new_password]
                     user.save
                 end
+                flash[:message] = "Changes saved successfully."
+                redirect "/users/#{current_user.slug}/account"
             else 
                 flash[:message] = "Password incorrect. Please try again."
-                redirect "/users/#{current_user.username}/edit"
+                redirect "/users/#{current_user.slug}/edit"
             end 
-            flash[:message] = "Changes saved successfully."
-            redirect "/users/#{current_user.username}/edit"
         end
     end
 

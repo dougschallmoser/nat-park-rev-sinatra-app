@@ -22,7 +22,7 @@
           <span class="nav-text"><a href='/users/<%= current_user.slug %>'>My Page</a>    </span>
           <span class="nav-text"><a href='/posts/new'>Create</a>    </span>
           <span class="nav-text"><a href='/logout'>Logout</a>    </span>
-          <span class="nav-user"><h5>You are logged in as: <span class="orangeText"><a href="/users/<%= current_user.username %>/account"><%= current_user.username %></a></h5></span>
+          <span class="nav-user"><h5>You are logged in as: <span class="orangeText"><a href="/users/<%= current_user.slug %>/account"><%= current_user.slug %></a></h5></span>
         <% end %>
       </nav>
     </header>
