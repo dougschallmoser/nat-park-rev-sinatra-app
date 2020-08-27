@@ -19,7 +19,6 @@ main {
   justify-content: center;
   align-items: center;
   display: flex;
-  background-color: #336742;
   width: 100%;
   height: 100%;
   flex-flow: column wrap;
@@ -97,7 +96,7 @@ table tr:last-child td:last-child {
 }
 
 td {
-  background-color: #fff0d1;
+  background-color: #fdf6e3;
   font-size: 14px;
 }
 
@@ -128,14 +127,14 @@ td.form-value {
 td.my-page-subheading {
   text-align: center;
   font-size: 14px;
-  background-color: #fff0d1;
+  background-color: #fdf6e3;
   padding: 2px;
 }
 
 td.my-page-heading {
   text-align: center;
   font-size: 14px;
-  background-color: #f2e0bd;
+  background-color: #fdf6e3;
   padding: 2px;
 }
 
@@ -150,7 +149,7 @@ td.rev-content {
 
 td.show-content {
   text-align: justify;
-  background-color: #fff0d1;
+  background-color: #fdf6e3;
   font-size: 13px;
   font-weight: 300;
   padding: 14px;
@@ -238,7 +237,7 @@ table.sort tr td {
 
 input { 
   text-align: left;
-  background-color: #fff0d1;
+  background-color: #fdf6e3;
   border: 1px solid #666666;
   border-radius: 10px;
   padding: 3px;
@@ -255,7 +254,7 @@ input#title {
 }
 
 input[type="submit"] {
-  background-color: #f2e0bd;
+  background-color: #fdf6e3;
   padding: 4px;
   height: 2em;
   border-radius:5px;
@@ -265,7 +264,7 @@ input[type="submit"] {
 
 textarea {
   text-align: left;
-  background-color: #fff0d1;
+  background-color: #fdf6e3;
   border-radius: 10px;
   resize: none;
   padding: 10px;
@@ -273,7 +272,7 @@ textarea {
 }
 
 select {
-  background-color: #fff0d1;
+  background-color: #fdf6e3;
   border-radius: 10px;
   box-shadow:0 0 10px 2px rgba(0,0,0,0.07);
 }
@@ -283,7 +282,7 @@ select#rating {
 }
 
 select#parks-states {
-  background-color: #fff0d1;
+  background-color: #fdf6e3;
 }
 
 img {
@@ -337,14 +336,14 @@ a:hover {
   position: relative;
   min-height: 100vh;
   flex-direction: column;
-  background-color: #fdf6e3;
+  background-color: #fff0d1;
 }
 
 .item {
   margin-top: 40px;
   height: 100%;
   width: 100%;
-  background-color: #fdf6e3;
+  background-color: #fff0d1;
   padding-bottom: 40px;
   font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
 }
@@ -352,6 +351,7 @@ a:hover {
 .splash-container {
   position: relative;
   text-align: center;
+  height: 100%;
 }
 
 .splash-text {
