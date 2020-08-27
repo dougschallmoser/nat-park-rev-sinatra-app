@@ -40,16 +40,7 @@ class UsersController < ApplicationController
     end
 
     post '/login' do 
-        user = User.find_by(:username => params[:username])
-        if user && user.authenticate(params[:password])
-            session[:username] = user.username 
-            flash[:logged_in] = "You have successfully logged in."
-            redirect_if_return_url_exists
-            redirect "/users/#{current_user.slug}"
-        else 
-            flash[:credential_error] = "Invalid credentials. Please try again."
-            redirect "/login"
-        end
+        login(params[:username], params[:password])
     end
 
     get '/logout' do 

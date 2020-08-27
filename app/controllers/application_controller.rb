@@ -22,6 +22,19 @@ class ApplicationController < Sinatra::Base
         def logged_in?
             !!current_user
         end
+
+        def login(username, password)
+            user = User.find_by(:username => username)
+            if user && user.authenticate(password)
+                session[:username] = user.username 
+                flash[:logged_in] = "You have successfully logged in."
+                redirect_if_return_url_exists
+                redirect "/users/#{current_user.slug}"
+            else 
+                flash[:credential_error] = "Invalid credentials. Please try again."
+                redirect "/login"
+            end
+        end
         
         def redirect_if_not_logged_in
             if !current_user
