@@ -135,6 +135,7 @@ beautiful_drive.park = Park.find_by(:name => "Saguaro")
 beautiful_drive.save
 
 covid_insights.user = skittles 
+covid_insights.characteristics << Characteristic.find(4)
 covid_insights.park = Park.find_by(:name => "Denali")
 covid_insights.save
 

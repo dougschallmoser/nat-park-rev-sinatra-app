@@ -111,6 +111,11 @@ th.show-post-title {
   font-size: 22px;
 }
 
+td.td-center {
+  text-align: left;
+  width: auto;
+}
+
 td.form-label {
   text-align: right;
   background-color: transparent;
@@ -356,6 +361,24 @@ a:hover {
   border: 1px solid black;
   background-color: #fcdb97;
   margin: auto;
+  justify-content: center;
+}
+
+.keywords-my-page {
+  text-align: center;
+  border: 1px solid black;
+  background-color: #fcdb97;
+  margin: auto;
+  font-size: 12px;
+  justify-content: center;
+}
+
+.keywords-all-reviews {
+  text-align: center;
+  border: 1px solid black;
+  background-color: #fcdb97;
+  margin: auto;
+  font-size: 10px;
   justify-content: center;
 }
 

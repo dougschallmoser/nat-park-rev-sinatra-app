@@ -28,7 +28,15 @@
         </tr>
                 <% @posts.each do |post| %>
         <tr>
-                    <td><a href="../../posts/<%= post.id %>"><%= post.capitalize_title %></a></td>
+                    <td>
+                    <a href="../../posts/<%= post.id %>"><%= post.capitalize_title %></a>
+                    <% if !post.characteristics.empty? %>
+                        <% post.characteristics.each do |characteristic|  %>
+                            <span class="keywords-all-reviews"><%= characteristic.name %></span>
+                        <% end %>
+                        <br>
+                    <% end %>
+                    </td>
                     <td><a href="../../parks/<%= post.park.slug %>"><%= post.park.name %></a></td>
                     <td><%= post.user.username %></td>
                     <td>

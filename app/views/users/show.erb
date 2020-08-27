@@ -50,7 +50,17 @@
                 <td class="my-page-subheading"><%= post.rating %>/5</td>
         </tr>
         <tr>
-                <td class="show-content" colspan="6"><%= post.content %></td>
+                
+                <td class="show-content" colspan="6">
+                    <% if !post.characteristics.empty? %>
+                        <% post.characteristics.each do |characteristic|  %>
+                            <span class="keywords-my-page"><%= characteristic.name %></span>
+                        <% end %>
+                    <br>
+                    <% end %>
+                    
+                    <%= post.content %>
+                </td>
         </tr>
     <% end %>
 </table>
