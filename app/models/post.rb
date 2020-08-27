@@ -2,6 +2,8 @@ class Post < ActiveRecord::Base
 
     belongs_to :user 
     belongs_to :park
+    has_many :post_characteristics
+    has_many :characteristics, through: :post_characteristics
 
     validates :title, :presence => true 
     validates :content, :presence => true 

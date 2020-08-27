@@ -9,6 +9,13 @@ erin = User.create(:name => "Erin", :username => "branzell", :email => "erin@aol
 
 razor83 = User.create(:name => "Rachel", :username => "razor83", :email => "razor83@aol.com", :password => "blade")
 
+## Characteristics ##
+
+family = Characteristic.create(:name => "Family-Friendly")
+crowded = Characteristic.create(:name => "Crowded/busy")
+unique = Characteristic.create(:name => "Unique experience")
+gear = Characteristic.create(:name => "Special gear recommended")
+
 ## Posts ##
 so_many_animals = Post.create(:title => "So Many Animals", :content => "I would definitely suggest doing lots of research before coming to make sure you know where you want to go and what you want to see while in Yellowstone. The park is huge! And there is a lot to see and do. We drove through in one day and saw some highlights but probably could have done more. It can be tricky driving through there, so make sure you are prepared for the winding roads and hills. We did see Old Faithful, it was cool but there were really too many people around to feel safe during covid. The views are unmatched though, highly recommend the park overall!", :rating => "4", :created_at => "2020-08-16 15:42:48 -0700", :updated_at => "2020-08-16 15:42:48 -0700")
 
@@ -105,6 +112,8 @@ Park.create(parks)
 ## Associations ##
 
 so_many_animals.user = doug 
+so_many_animals.characteristics << Characteristic.find(1) 
+so_many_animals.characteristics << Characteristic.find(2) 
 so_many_animals.park = Park.find_by(:name => "Yellowstone")
 so_many_animals.save
 
@@ -117,6 +126,7 @@ bad_park.park = Park.find_by(:name => "Biscayne")
 bad_park.save 
 
 so_so.user = doug 
+so_so.characteristics << Characteristic.find(4) 
 so_so.park = Park.find_by(:name => "North Cascades") 
 so_so.save 
 
@@ -133,6 +143,7 @@ friendly_staff.park = Park.find_by(:name => "Olympic")
 friendly_staff.save
 
 beautiful_places.user = erin 
+beautiful_places.characteristics << Characteristic.find(4) 
 beautiful_places.park = Park.find_by(:name => "Zion")
 beautiful_places.save 
 

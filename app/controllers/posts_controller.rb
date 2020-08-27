@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     get '/posts/new' do 
         redirect_if_not_logged_in
         @parks = Park.all
+        @characteristics = Characteristic.all
         erb :"posts/new"
     end
     
