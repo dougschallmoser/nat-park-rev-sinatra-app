@@ -5,6 +5,7 @@
     <br>
     <input type="text" id="title" name="post[title]" size="50" required="required">
     <br>
+
     <br>
     <label for="parks">National Park:</label>
     <br>
@@ -16,18 +17,21 @@
         </select>
     <br>
     <br>
+
     <label for="content">Content:</label>
     <br>
     <textarea id="content" name="post[content]" placeholder="Enter your review here." rows="12" cols="80" required="required"></textarea>
     <br>
     <br>
+
     <label for="characteristics">Select all that apply:</label>
     <br>
     <% @characteristics.each do |characteristic| %>
-        <input type="checkbox" id="char1" name="post[characteristic_ids][]" value="characteristic.id"><%= characteristic.name %>
+        <input type="checkbox" id="char<%= characteristic.id %>" name="post[characteristic_ids][]" value="<%= characteristic.id %>"><%= characteristic.name %>
     <% end %>
     <br>
     <br>
+
     <label for="rating">Rating:</label>
     <br>
         <select id="rating" name="post[rating]" required>

@@ -1,4 +1,4 @@
-<br>
+
 <span class="alert">
     <%= flash[:edit_error] %>
 </span>
@@ -8,11 +8,13 @@
 
 <form method="POST" action="/posts/<%= @post.id %>">
     <input type="hidden" id="hidden" name="_method" value="patch">
+
     <label for="title">Title:</label>
     <br>
         <input type="text" id="title" name="post[title]" size="50" value="<%= @post.title %>" required="required">
     <br>
     <br>
+
     <label for="parks">National Park:</label>
     <br>
         <select id="parks" name="post[park_id]" required>
@@ -22,11 +24,21 @@
         </select>
     <br>
     <br>
+
     <label for="content">Content:</label>
     <br>
         <textarea id="content" name="post[content]" rows="12" cols="80" required="required"><%= @post.content %></textarea>
     <br>
     <br>
+
+    <label for="characteristics">Select all that apply:</label>
+    <br>
+    <% @characteristics.each do |characteristic| %>
+        <input type="checkbox" id="char<%= characteristic.id %>" name="post[characteristic_ids][]" value="<%= characteristic.id %>" <%= 'checked' if @post.characteristics.include?(characteristic) %>><%= characteristic.name %>
+    <% end %>
+    <br>
+    <br>
+
     <label for="rating">Rating:</label>
     <br>
         <select id="rating" name="post[rating]" required>

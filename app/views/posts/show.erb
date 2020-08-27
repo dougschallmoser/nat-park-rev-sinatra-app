@@ -42,6 +42,14 @@
         </td>
     </tr>
     <tr>
-        <td class="show-review-content"><%= @post.content %></td>
+        <td class="show-review-content">
+            <% if !@post.characteristics.empty? %>
+                <% @post.characteristics.each do |characteristic|  %>
+                    <span class="keywords"><%= characteristic.name %></span>
+                <% end %>
+                <br>
+            <% end %>
+            <%= @post.content %>
+        </td>
     </tr>
 </table>

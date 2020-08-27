@@ -43,6 +43,7 @@ class PostsController < ApplicationController
         @post = Post.find_by(:id => params[:id])
         redirect_if_not_post_owner(@post)
         @parks = Park.all
+        @characteristics = Characteristic.all
         erb :"posts/edit"
     end
 
