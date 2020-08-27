@@ -160,5 +160,6 @@ denied_entry.park = Park.find_by(:name => "Rocky Mountain")
 denied_entry.save
 
 must_see.user = skittles 
+must_see.characteristics << Characteristic.find(2)
 must_see.park = Park.find_by(:name => "Glacier")
 must_see.save
