@@ -62,7 +62,7 @@ class PostsController < ApplicationController
         redirect_if_not_logged_in
         post = Post.find_by(:id => params[:id])
         redirect_if_not_post_owner(post)
-        if post.delete 
+        if post.destroy
             flash[:message] = "Review deleted successfully."
         else
             flash[:message] = "Something went wrong and the review was not deleted."
