@@ -30,6 +30,39 @@ class UsersController < ApplicationController
             redirect "/users/#{current_user.slug}"
         end 
     end
+
+    get '/users/:username/account' do 
+        redirect_if_not_logged_in
+        @user = User.find_by_slug(params[:username])
+        if @user && @user.username == session[:username]
+            erb :"/users/account"
+        else
+            flash[:permission] = "You do not have permission to edit that user's page."
+            redirect "/users/#{current_user.slug}"
+        end 
+    end
+
+    get '/users/:username/edit' do 
+        redirect_if_not_logged_in
+        @user = User.find_by_slug(params[:username])
+        if @user && @user.username == session[:username]
+            erb :"/users/edit"
+        else
+            flash[:permission] = "You do not have permission to edit that user's page."
+            redirect "/users/#{current_user.slug}"
+        end 
+    end
+
+    patch '/users/:username' do
+        redirect_if_not_logged_in
+        user = User.find_by_slug(params[:username])
+        if user && user.username == session[:username]
+            authenticate_and_change_password(user)
+        else
+            flash[:permission] = "You do not have permission to edit that user's page."
+            redirect "/users/#{current_user.slug}"
+        end
+    end
     
     get '/login' do 
         if !logged_in?

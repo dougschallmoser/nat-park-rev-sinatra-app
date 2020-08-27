@@ -60,6 +60,21 @@ class ApplicationController < Sinatra::Base
                 session[:return_url].clear
             end
         end
+
+        def authenticate_and_change_password(user)
+            if user.authenticate(params[:current_password])
+                user.update(params[:user]) 
+                if !params[:new_password].empty?
+                    user.password = params[:new_password]
+                    user.save
+                end
+            else 
+                flash[:message] = "Password incorrect. Please try again."
+                redirect "/users/#{current_user.username}/edit"
+            end 
+            flash[:message] = "Changes saved successfully."
+            redirect "/users/#{current_user.username}/edit"
+        end
     end
 
 end

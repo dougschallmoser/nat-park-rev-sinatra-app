@@ -1,0 +1,37 @@
+<br>
+<span class="alert">
+    <%= flash[:message] %>
+</span>
+
+<h2>Edit Account Information</h2>
+
+<br>
+*Not required
+<br>
+
+<table class="account-edit">
+    <form method="POST" action="/users/<%= @user.username %>">
+        <input type="hidden" name="_method" value="patch">
+    <tr>
+        <td class="form-label"><label for="name">Name: </label></td>
+        <td class="form-value"><input type="text" id="name" name="user[name]" size="30" required="required" value="<%= @user.name %>"></td>
+    </tr>
+    <tr>
+        <td class="form-label"><label for="email">Email: </label></td>
+        <td class="form-value"><input type="text" id="email" name="user[email]" size="30" required="required" value="<%= @user.email %>"></td>
+    </tr>
+    <tr>
+        <td class="form-label"><label for="username">Username: </label></td>
+        <td class="form-value"><input type="text" id="username" name="user[username]" size="30"  required="required" value="<%= @user.username %>"></td>
+    </tr>
+    <tr>
+        <td class="form-label"><label for="current_password">Current Password: </label></td>
+        <td class="form-value"><input type="password" id="current_password" name="current_password" size="30" required="required"></td>
+    </tr>
+    <tr>
+        <td class="form-label"><label for="new_password">*New Password: </label></td>
+        <td class="form-value"><input type="password" id="new_password" name="new_password" size="30"></td>
+    </tr>
+</table>
+    <h2><input type="submit" value="Submit"></h2>
+    </form>
