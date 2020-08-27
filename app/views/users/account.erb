@@ -9,15 +9,15 @@
     <form method="get" action="/users/<%= @user.username %>/edit">
     <tr>
         <td class="form-label"><label for="name">Name: </label></td>
-        <td class="form-value"><input type="text" id="name" name="user[name]" size="30" value="<%= @user.name %>" readonly></td>
+        <td class="form-value"><input type="text" id="name" size="30" value="<%= @user.name %>" readonly></td>
     </tr>
     <tr>
         <td class="form-label"><label for="email">Email: </label></td>
-        <td class="form-value"><input type="text" id="email" name="user[email]" size="30" value="<%= @user.email %>" readonly></td>
+        <td class="form-value"><input type="text" id="email" size="30" value="<%= @user.email %>" readonly></td>
     </tr>
     <tr>
         <td class="form-label"><label for="username">Username: </label></td>
-        <td class="form-value"><input type="text" id="username" name="user[username]" size="30" value="<%= @user.username %>" readonly></td>
+        <td class="form-value"><input type="text" id="username" size="30" value="<%= @user.username %>" readonly></td>
     </tr>
 </table>
     <h2><input type="submit" value="Edit Account Info"></h2>
