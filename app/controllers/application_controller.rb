@@ -41,46 +41,12 @@ class ApplicationController < Sinatra::Base
             end
         end
 
-        def login(username, password)
-            user = User.find_by(:username => username)
-            if user && user.authenticate(password)
-                session[:username] = user.username 
-                flash[:logged_in] = "You have successfully logged in."
-                redirect_if_return_url_exists
-                redirect "/users/#{current_user.slug}"
-            else 
-                flash[:credential_error] = "Invalid credentials. Please try again."
-                redirect "/login"
-            end
-        end
-
         def redirect_if_return_url_exists
             if session[:return_url]
                 redirect session[:return_url]
                 session[:return_url].clear
             end
         end
-
-        def display_nav_logged_in
-            <<-DOC
-                <span class="nav-text-logo"><a id="nav-logo" href='/'>NatParkRev</a>    </span>
-                <span class="nav-text"><a href='/posts'>Reviews</a>    </span>
-                <span class="nav-text"><a href='/users/#{current_user.slug}'>My Page</a>    </span>
-                <span class="nav-text"><a href='/posts/new'>Create</a>    </span>
-                <span class="nav-text"><a href='/logout'>Logout</a>    </span>
-                <span class="nav-user"><h5>You are logged in as: <span class="orangeText">#{current_user.username}</h5></span>
-            DOC
-        end
-
-        def display_nav_not_logged_in
-            <<-DOC
-                <span class="nav-text-logo"><a id="nav-logo" href='/'>NatParkRev</a>    </span>
-                <span class="nav-text"><a href='/posts'>Reviews</a>    </span>
-                <span class="nav-text"><a href='/signup'>Sign Up</a>    </span>
-                <span class="nav-text"><a href='/login'>Login</a>    </span>
-            DOC
-        end
-
     end
 
 end
