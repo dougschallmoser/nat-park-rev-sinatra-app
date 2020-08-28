@@ -383,7 +383,6 @@ a:hover {
 }
 
 .keywords-all-reviews {
-  text-align: center;
   border: 1px solid black;
   background-color: #fcdb97;
   margin: auto;
@@ -525,7 +524,7 @@ h4 {
 }
 
 h5 {
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
   display: inline;
   font-weight: 300;
