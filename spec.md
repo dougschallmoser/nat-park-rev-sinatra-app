@@ -6,9 +6,9 @@ Specs:
 - [x] Use ActiveRecord for storing information in a database\
     ActiveRecord was used to store information as shown in the model files.
 - [x] Include more than one model class (e.g. User, Post, Category)\
-    Three models are included: User, Post, Park.
+    Five models are included: User, Post, Park, Characteristic, and PostCharacteristic.
 - [x] Include at least one has_many relationship on your User model (e.g. User has_many Posts)\
-    There are two has_many relationships (User has_many Posts, and User has_many Parks through Posts).
+    There are multiple has_many relationships (User has_many Posts, User has_many Parks through Posts, Characteristic has many posts through post_characteristics, Post has many characteristics through post_chracteristics).
 - [x] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)\
     There are two belongs_to relationships (Post belongs_to User, and Post belongs_to Park).
 - [x] Include user accounts with unique login attribute (username or email)\
