@@ -16,7 +16,7 @@ class UsersController < ApplicationController
             session[:username] = user.username 
             redirect "/users/#{current_user.slug}"
         else 
-            flash[:message] = "Username is already taken. Please try again."
+            flash[:message] = user.errors.full_messages.to_sentence + "."
             redirect "/signup"
         end 
     end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
         if @user && @user.username == session[:username]
             erb :"/users/account"
         else
-            flash[:message] = "You do not have permission to edit that user's page."
+            flash[:message] = "You do not have permission to view that user's account information."
             redirect "/users/#{current_user.slug}"
         end 
     end
