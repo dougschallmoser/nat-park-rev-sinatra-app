@@ -27,10 +27,12 @@
       </nav>
     </header>
     <main>
-      <br>
-      <span class="alert">
-        <%= flash[:message] %>
-      </span>
+      <% if flash[:message] %>
+        <br>
+        <span class="alert">
+          <%= flash[:message] %>
+        </span>
+      <% end %>
       <%= yield %>
     </main>
     <footer>
