@@ -23,7 +23,7 @@ class PostsController < ApplicationController
             flash[:message] = "Review successfully created."
             redirect "/posts/#{post.id}"
         else 
-            flash[:message] = user.errors.full_messages.to_sentence + "."
+            flash[:message] = post.errors.full_messages.to_sentence + "."
             redirect "/users/#{current_user.slug}"
         end
     end
@@ -56,7 +56,7 @@ class PostsController < ApplicationController
             flash[:message] = "Changes saved successfully."
             redirect "/posts/#{post.id}"
         else
-            flash[:message] = user.errors.full_messages.to_sentence + "."
+            flash[:message] = post.errors.full_messages.to_sentence + "."
             redirect "/posts/#{post.id}/edit"
         end
     end
