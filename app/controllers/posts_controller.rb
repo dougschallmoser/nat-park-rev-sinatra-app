@@ -34,7 +34,8 @@ class PostsController < ApplicationController
         if @post = Post.find_by(:id => params[:id])
             erb :"posts/show"
         else
-            erb :"/posts/error"
+            flash[:message] = "The requested page does not exist."
+            redirect "/posts"
         end 
     end
 
