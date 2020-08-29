@@ -52,10 +52,10 @@ class PostsController < ApplicationController
         post = Post.find_by(:id => params[:id])
         redirect_if_not_post_owner(post)
         if post.update(params[:post])
-            flash[:edit] = "Changes saved successfully."
+            flash[:message] = "Changes saved successfully."
             redirect "/posts/#{post.id}"
         else
-            flash[:edit_error] = "Something went wrong and changes were not saved."
+            flash[:message] = "Something went wrong and changes were not saved."
             redirect "/posts/#{post.id}/edit"
         end
     end

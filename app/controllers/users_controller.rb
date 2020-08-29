@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     post '/signup' do 
         user = User.new(params[:user])
         if user.save
-            flash[:signed_up] = "You have successfully created an account."
+            flash[:message] = "You have successfully created an account."
             session[:username] = user.username 
             redirect "/users/#{current_user.slug}"
         else 
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
         if @user && @user.username == session[:username]
             erb :"/users/show"
         else
-            flash[:permission] = "You do not have permission to view that user's page."
+            flash[:message] = "You do not have permission to view that user's page."
             redirect "/users/#{current_user.slug}"
         end 
     end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
         if @user && @user.username == session[:username]
             erb :"/users/account"
         else
-            flash[:permission] = "You do not have permission to edit that user's page."
+            flash[:message] = "You do not have permission to edit that user's page."
             redirect "/users/#{current_user.slug}"
         end 
     end
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
         if @user && @user.username == session[:username]
             erb :"/users/edit"
         else
-            flash[:permission] = "You do not have permission to edit that user's page."
+            flash[:message] = "You do not have permission to edit that user's page."
             redirect "/users/#{current_user.slug}"
         end 
     end
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
         if user && user.username == session[:username]
             authenticate_and_change_password(user)
         else
-            flash[:permission] = "You do not have permission to edit that user's page."
+            flash[:message] = "You do not have permission to edit that user's page."
             redirect "/users/#{current_user.slug}/account"
         end
     end
@@ -77,11 +77,11 @@ class UsersController < ApplicationController
         user = User.find_by(:username => params[:username])
         if user && user.authenticate(params[:password])
             session[:username] = user.username 
-            flash[:logged_in] = "You have successfully logged in."
+            flash[:message] = "You have successfully logged in."
             redirect_if_return_url_exists
             redirect "/users/#{current_user.slug}"
         else 
-            flash[:credential_error] = "Invalid credentials. Please try again."
+            flash[:message] = "Invalid credentials. Please try again."
             redirect "/login"
         end
     end
