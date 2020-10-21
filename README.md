@@ -1,3 +1,5 @@
+![NatParkRev](https://user-images.githubusercontent.com/65590878/96668859-ea863300-1310-11eb-97a3-17a27900daf7.png)
+
 # NatParkRev
 
 NatParkRev is a user-generated National Park review web application. User's can create reviews of National Parks and share them with the world. This application was built using Sinatra, ActiveRecord and SQLite3.
